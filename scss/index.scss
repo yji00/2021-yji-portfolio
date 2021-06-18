@@ -21,7 +21,7 @@ section.main{
   .black-wrapper{
     margin: 1%;
     width: 98%;
-    height: 98%;
+    height: 96%;
     position: relative;
     display: grid;
     gap: 2px;
@@ -35,7 +35,7 @@ section.main{
       @include bgDark(.85);
       transition: all .5s;
       &:hover{
-        border-radius: 25px;
+        border-radius: 1.5vw;
       }
     }
     .menu-wrap{
@@ -46,21 +46,21 @@ section.main{
         background-color: $colorWhite;
         border-radius: 50%;
         color: #607b5a;
-        font-size: 2em;
+        font-size: 3vw;
         font-weight: 700;
         line-height: 1.1;
         padding: .5em .8em;
         text-align: center;
         left: 50%;
-        top: 25px;
         transform: translateX(-50%);
+        top: 2vh;
       }
       .menu{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         color: $colorWhite;
-        font-size: 1.25em;
+        font-size: 1.5vw;
         font-weight: 300;
         line-height: 3.5;
         li{
@@ -68,9 +68,9 @@ section.main{
             display: inline-block;
             content: '';
             background-color: $colorWhite;
-            width: 10px;
-            height: 10px;
-            margin: 0 1.25em .18em 0;
+            width: .7vw;
+            height: .7vw;
+            margin: 0 1.5vw .5vh 0;
           }
         }
       }
@@ -80,25 +80,29 @@ section.main{
       position: relative;
       .block{
         position: absolute;
-        width: 200px;
-        height: 13px;
+        width: 13.5vw;
+        height: 2vh;
         background-color: #607b5a;
-        left: 200px;
+        left: 12.5vw;
       }
       .title{
         position: absolute;
-        margin: .2em;
+        font-size: 7vw;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 0 0 2.5vw;
         color: $colorWhite;
-        font-size: 7em;
         font-weight: 500;
       }
       .time{
         position: absolute;
-        color: rgba($color: #000000, $alpha: 1.0);
-        text-shadow: -1px 0 #7b9775, 0 1px #7b9775, 1px 0 #7b9775, 0 -1px #7b9775;
-        font-size: 5em;
+        -webkit-text-stroke: 2px #7b9775;
+        color: rgba($color: #000000, $alpha: 0);
+        font-size: 7vw;
         right: 0;
-        margin: .5em;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 3vw;
         
       }
 
@@ -110,19 +114,19 @@ section.main{
       ul{
         position: absolute;
         color: $colorWhite;
-        font-size: 4.5rem;
+        font-size: 5vw;
         font-weight: 400;
         top: 50%;
         transform: translateY(-50%);
         li{
           text-align: end;
-          margin: .5em 0;
+          margin: 7vh 0;
           h3{
-            padding-left: 1.8em;
+            padding-left: 7.5vw;
             border-bottom: 1px solid #22ffcc;
           }
           p{
-            font-size: .3rem;
+            font-size: .7vw;
             color: rgba($color: #fff, $alpha: 0.5);
           }
         }
@@ -130,8 +134,8 @@ section.main{
       }
       .block{
         position: absolute;
-        width: 180px;
-        height: 13px;
+        width: 11vw;
+        height: 1.75vh;
         background-color: #607b5a;
         bottom: 0;
         right: 0;
@@ -142,45 +146,47 @@ section.main{
       position: relative;
       h3{
         position: absolute;
-        text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-        font-size: 3em;
-        top: 40px;
-        left: 50px;
+        -webkit-text-stroke: 1px $colorWhite;
+        color: rgba($color: #000000, $alpha: 0);
+        font-size: 4vw;
+        top: 3vh;
+        left: 3vw;
         z-index: 3;
       }
       .block{
         position: absolute;
-        width: 160px;
-        height: 40px;
+        width: 13vw;
+        height: 6vh;
         background-color: rgba($color: #281315, $alpha: .8);
-        top: 65px;
-        left: 10px;
+        top: 7vh;
+        left: 2vw;
         z-index: 2;
       }
       .video{
         position: absolute;
         border: 2px solid $colorLight;
-        width: 220px;
-        height: 220px;
-        top: 80px;
-        left: 60px;
+        width: 20vw;
+        height: 30vh;
+        top: 10vh;
+        left: 5vw;
         z-index: 1;
       }
       .navi{
         position: absolute;
         color: $colorLight;
+        font-size: 1vw;
         font-weight: 300;
         @include flex($FE, $FE);
         bottom: 0;
         right: 0;
-        margin: 1em 1.25em;
+        margin: 2vh 1vw;
         .pre{
-          font-size: 3em;
-          padding-right: .5rem;
+          font-size: 3vw;
+          padding-right: 1.5vh;
           border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
         }
         .after{
-          padding-left: .5em;
+          padding-left: .7vw;
         }
       }
 
@@ -191,7 +197,8 @@ section.main{
       img{
         position: absolute;
         right: 0;
-        padding: 3em;
+        height: 100%;
+        padding: 3vw;
         background-color: #e43e3b;
         transition: all .5s;
         &:hover{
@@ -211,9 +218,9 @@ section.skill{
     height: 100vh;
     overflow: hidden;
     .black-wrapper{
-      margin: 1%;
-      width: 98%;
-      height: 98%;
+        margin: 1%;
+        width: 98%;
+        height: 96%;
       position: relative;
       @include bgDark(.85);
       ul{
