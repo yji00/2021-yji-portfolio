@@ -10,6 +10,8 @@ html, body {
 }
 
 section.main{
+  transform-origin: left bottom;
+
   .gradient-wrapper{
   background: $colorGradient;
   position: relative;
