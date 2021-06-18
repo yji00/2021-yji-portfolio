@@ -3,7 +3,7 @@
 //font-family: 'Oswald', sans-serif;
 //gradient #C6FFDD #FBD786 #f7797d
 // main-div green: #607b5a 12:36: #7b9775 red: #e43e3b  hover: #82322d scroll: #281315 line: 22ffcc
-//skill #281315
+//skill #22ffcc
 
 html, body {
   font-family: 'Oswald', sans-serif;
@@ -62,18 +62,34 @@ section.main{
         color: $colorWhite;
         font-size: 1.5vw;
         font-weight: 300;
-        line-height: 3.5;
+        line-height: 1;
+        cursor: pointer;
         li{
+          margin: 6vh 0;
+          transition: background-color 1s;
+          &:hover{
+            background: linear-gradient(rgba($color: #000000, $alpha: 0) 50%, #82322d 50%);
+          }
           &::before{
             display: inline-block;
             content: '';
             background-color: $colorWhite;
             width: .7vw;
-            height: .7vw;
-            margin: 0 1.5vw .5vh 0;
+            height: 1.5vh;
+            margin-right: 1.5vw;
           }
         }
       }
+      // ul.bar-wrap{
+      //   position: absolute;
+      //   top: 37.5vh;
+      //   li{
+      //     width: .7vw;
+      //     height: 1.5vh;
+      //     background-color: #82322d;
+      //     margin-bottom: 8.9vh;
+      //   }
+      // }
     }
     .title-wrap{
       grid-area: title;
@@ -122,12 +138,21 @@ section.main{
           text-align: end;
           margin: 7vh 0;
           h3{
+            transition: all 1s;
             padding-left: 7.5vw;
-            border-bottom: 1px solid #22ffcc;
+            &:hover{
+              transform: translateX(3vw);
+              &::after{
+                content: url(../img/arrow-right.png);
+                transform: translateX(3vw);
+              }
+            }
           }
           p{
             font-size: .7vw;
             color: rgba($color: #fff, $alpha: 0.5);
+            padding-left: 7.5vw;
+            border-top: 1px solid #22ffcc;
           }
         }
         
@@ -171,7 +196,7 @@ section.main{
         left: 5vw;
         z-index: 1;
       }
-      .navi{
+      .page{
         position: absolute;
         color: $colorLight;
         font-size: 1vw;
@@ -202,7 +227,7 @@ section.main{
         background-color: #e43e3b;
         transition: all .5s;
         &:hover{
-          border-radius: 0 25px 25px 0;
+          padding: 0 0 6vw 6vw;
         }
       }
     }
@@ -222,47 +247,112 @@ section.skill{
         width: 98%;
         height: 96%;
       position: relative;
-      @include bgDark(.85);
+      @include bgDark(1);
       ul{
         position: absolute;
         color: $colorLight;
-        font-size: 3em;
-        margin-left: 10%;
+        font-size: 4vw;
+        margin-left: 10vw;
         top: 50%;
         transform: translateY(-50%);
         text-align: center;
         line-height: 1.5;
         li.active{
-          font-size: 2.5em;
+          font-size: 6vw;
           color: $colorWhite;
         }
       }
       .navi{
       position: absolute;
-      @include flex($SA, baseline);
-      left: 50%;
-      transform: translateZ(-50%);
+      @include flex($CT, $CT);
+      width: 100%;
       color: $colorLight;
-      margin: 3em 0;
+      margin: 5vh 0;
+      font-size: 1vw;
       .about{ 
         &::before{
-          padding-right: 1em;
+          padding-right: 1vw;
           content: '<';
         }
       }
       .skill{
-        padding: 0 1.5em;
-        font-size: 3em;
+        padding: 0 4vw;
+        font-size: 3vw;
       }
       .portfolio{
         &::after{
-          padding-left: 1em;
+          padding-left: 1vw;
           content: '>';
         }
       }
       }
+      .number{
+        position: absolute;
+        font-size: 15vw;
+        color: $colorWhite;
+        right: 20vw;
+        bottom: 33vh;
+      }
       .row-line{
-
+        width: 2px;
+        height: 100%;
+        position: absolute;
+        right: 11vw;
+        background: $rowGradient;
+        opacity: .5;
+      }
+      .col-line{
+        width: 55%;
+        height: 2px;
+        position: absolute;
+        right: 0;
+        bottom: 20vh;
+        background: $rowGradient;
+        opacity: .5;
+      }
+      .col-line{
+        width: 55%;
+        height: 2px;
+        position: absolute;
+        right: 0;
+        bottom: 20vh;
+        background: $colGradient;
+        opacity: .5;
+      }
+      .block{
+        width: 3vw;
+        height: 30vh;
+        position: absolute;
+        right: 0;
+        bottom: 33vh;
+        background: #22ffcc;
+      }
+      .desc{
+        position: absolute;
+        left: 45vw;
+        top: 77vh;
+        width: 40%;
+        font-size: 1.825vw;
+        font-weight: 300;
+        line-height: 1.3;
+        color: $colorLight;
+      }
+      .page{
+        position: absolute;
+        color: $colorLight;
+        font-size: 1vw;
+        font-weight: 300;
+        @include flex($FS, $FE);
+        right: 7vw;
+        top: 78vh;
+        .pre{
+          font-size: 3vw;
+          padding-right: 1.5vh;
+          border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
+        }
+        .after{
+          padding-left: .7vw;
+        }
       }
     }
   }
