@@ -135,6 +135,7 @@ section.main{
           h3{
             transition: all 1s;
             padding-left: 7.5vw;
+            cursor: pointer;
             &:hover{
               transform: translateX(3vw);
               &::after{
@@ -214,6 +215,7 @@ section.main{
     .next-wrap{
       grid-area: next;
       position: relative;
+      cursor: pointer;
       img{
         position: absolute;
         right: 0;
@@ -252,9 +254,15 @@ section.skill{
         transform: translateY(-50%);
         text-align: center;
         line-height: 1.5;
-        li.active{
-          font-size: 6vw;
-          color: $colorWhite;
+        cursor: pointer;
+        li{
+          transition: all 1s;
+          &:hover{
+            // font-size: 6vw;
+            transform: scale(1.5);
+            color: $colorWhite;
+
+          }
         }
       }
       .navi{
@@ -264,6 +272,7 @@ section.skill{
       color: $colorLight;
       margin: 5vh 0;
       font-size: 1vw;
+      cursor: pointer;
       .about{ 
         &::before{
           padding-right: 1vw;
@@ -350,6 +359,139 @@ section.skill{
         }
       }
     }
+  }
+}
+
+
+// fb9a7d e6eeaa
+//e6eeaa f9dc8b fb9a7d
+//d1f9cb e5efab
+//fbb57d fa937d
+//fbc780 fbb67d
+//fbb67d fbb67d
+//f9887d
+section.contact{
+  .black-wrapper{
+    width: 100%;
+    height: 100vh;
+    @include bgDark(1);
+    position: relative;
+    .skew-wrapper{
+      transform-origin: center;
+      width: 100%;
+      height: 100vh;
+      // transform: skew(10deg, 10deg);
+      .page{
+      position: absolute;
+      color: $colorLight;
+      font-size: 1vw;
+      font-weight: 300;
+      @include flex($FS, $FE);
+      margin-left: 1vw;
+      top: 50%;
+      transform: translateY(-50%);
+      .pre{
+        font-size: 3vw;
+        padding-right: 1.5vh;
+        border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
+      }
+      .after{
+        padding-left: .7vw;
+      }
+    }
+    .contact-wrap{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 52%;
+      color: $colorWhite;
+      font-size: 3vw;
+      font-weight: 300;
+      .number{
+        color: $colorDark;
+        margin-bottom: 2vh;
+      }
+      .title{
+        margin-bottom: 3vh;
+      }
+      a{
+        font-size: 2vw;
+        color: $colorGray;
+        padding: .5vw 6vw;
+        text-align: center;
+        border: 1px solid $colorGray;
+      }
+    }
+
+    .pentagon{
+      img.pentagon01{
+      position: absolute;
+      width: 7vw;
+      top: 12vh;
+      left: 10vw;
+      }
+      .pentagon02{
+      width: 3.5vw;
+      position: absolute;
+      top: 20vh;
+      left: 38vw;
+      }
+      .pentagon03{
+      width: 20vw;
+      position: absolute;
+      top: 30vh;
+      left: 16vw;
+      }
+      .pentagon04{
+      width: 4vw;
+      position: absolute;
+      bottom: 12vh;
+      left: 14vw;
+      }
+      .pentagon05{
+      width: 6vw;
+      position: absolute;
+      top: 12vh;
+      right: 15vw;
+      }
+      .pentagon06{
+      width: 3vw;
+      position: absolute;
+      bottom: 26vh;
+      right: 43vw;
+      }
+      .pentagon07{
+      width: 5vw;
+      position: absolute;
+      bottom: 15vh;
+      right: 20vw;
+      }
+    }
+    .message-icon{
+      img{
+        width: 14vw;
+        position: absolute;
+        top: 40vh;
+        left: 20vw;
+      }
+    }
+    .next{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      margin-right: 2vw;
+      font-size: 3vw;
+      color: $colorWhite;
+      cursor: pointer;
+      transition: all 1s;
+      i.next-active{
+        display: none;
+      }
+      &:hover{
+        margin-right: 1vw;
+      }
+    }}
   }
 }
 //http://narrowdesign.com/
