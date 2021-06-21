@@ -9,7 +9,24 @@ html, body {
   font-family: 'Oswald', sans-serif;
 }
 
+.gnb-wrapper {
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+  > section {
+    //position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left bottom;
+    transition: transform 2s;
+    &.active {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
 section.main{
+  z-index: 10;
   transform-origin: left bottom;
 
   .gradient-wrapper{
@@ -66,10 +83,9 @@ section.main{
         cursor: pointer;
         li{
           margin: 6vh 0;
-          transition: background-color 1s;
+          transition: background-color 1s ease-out;
           background: linear-gradient(to left, rgba($color: #000000, $alpha: 0) 50%, #82322d 50%) right;
           background-size: 200%;
-          transition: .5s ease-out;
           // background: linear-gradient(rgba($color: #000000, $alpha: 0) 50%, #82322d 50%);
           &:hover{
             background-position: left;
@@ -136,11 +152,16 @@ section.main{
             transition: all 1s;
             padding-left: 7.5vw;
             cursor: pointer;
+            &::after{
+              position: absolute;
+              content: url(../img/arrow-right.png);
+              opacity: 0;
+              transition: all .35s;
+            }
             &:hover{
               transform: translateX(3vw);
-              &::after{
-                content: url(../img/arrow-right.png);
-                transform: translateX(3vw);
+              &::after {
+                opacity: 1;
               }
             }
           }
@@ -233,6 +254,7 @@ section.main{
 }
 
 section.skill{
+  z-index: 9;
   .gradient-wrapper{
     background: $colorGradient;
     position: relative;
@@ -374,6 +396,7 @@ section.skill{
 //fbb67d fbb67d
 //f9887d
 section.contact{
+  z-index: 8;
   .black-wrapper{
     width: 100%;
     height: 100vh;
