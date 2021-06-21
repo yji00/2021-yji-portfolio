@@ -261,8 +261,11 @@ section.skill{
             // font-size: 6vw;
             transform: scale(1.5);
             color: $colorWhite;
-
           }
+        }
+        .active{
+          transform: scale(1.5);
+          color: $colorWhite;
         }
       }
       .navi{
