@@ -82,13 +82,15 @@ section.main{
         line-height: 1;
         cursor: pointer;
         li{
+          // border: solid red 1px;
           margin: 6vh 0;
-          transition: background-color 1s ease-out;
-          background: linear-gradient(to left, rgba($color: #000000, $alpha: 0) 50%, #82322d 50%) right;
+          transition: all .5s ease-out;
+          background: linear-gradient(to left, rgba($color: #22ffcc, $alpha: 0) 50%, #82322d 50%) right;
           background-size: 200%;
           // background: linear-gradient(rgba($color: #000000, $alpha: 0) 50%, #82322d 50%);
           &:hover{
             background-position: left;
+
           
           }
           &::before{
@@ -245,7 +247,7 @@ section.main{
         background-color: #e43e3b;
         transition: all .5s;
         &:hover{
-          padding: 0 0 6vw 6vw;
+          padding: 6vw 0 0 6vw;
         }
       }
     }
@@ -356,6 +358,7 @@ section.skill{
         bottom: 33vh;
         background: #22ffcc;
       }
+
       .desc{
         position: absolute;
         left: 45vw;
@@ -395,6 +398,7 @@ section.skill{
 //fbc780 fbb67d
 //fbb67d fbb67d
 //f9887d
+//https://www.raoul-gaillard.com/work
 section.contact{
   z-index: 8;
   .black-wrapper{
@@ -402,105 +406,107 @@ section.contact{
     height: 100vh;
     @include bgDark(1);
     position: relative;
-    .skew-wrapper{
-      transform-origin: center;
-      width: 100%;
-      height: 100vh;
-      // transform: skew(10deg, 10deg);
-      .page{
-      position: absolute;
-      color: $colorLight;
-      font-size: 1vw;
-      font-weight: 300;
-      @include flex($FS, $FE);
-      margin-left: 1vw;
-      top: 50%;
-      transform: translateY(-50%);
-      .pre{
-        font-size: 3vw;
-        padding-right: 1.5vh;
-        border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
-      }
-      .after{
-        padding-left: .7vw;
-      }
-    }
-    .contact-wrap{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 52%;
-      color: $colorWhite;
+    .page{
+    position: absolute;
+    color: $colorLight;
+    font-size: 1vw;
+    font-weight: 300;
+    @include flex($FS, $FE);
+    margin-left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    .pre{
       font-size: 3vw;
-      font-weight: 300;
-      .number{
-        color: $colorDark;
-        margin-bottom: 2vh;
-      }
-      .title{
-        margin-bottom: 3vh;
-      }
-      a{
-        font-size: 2vw;
-        color: $colorGray;
-        padding: .5vw 6vw;
-        text-align: center;
-        border: 1px solid $colorGray;
-      }
+      padding-right: 1.5vh;
+      border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
+    }
+    .after{
+      padding-left: .7vw;
+    }
     }
 
-    .pentagon{
-      img.pentagon01{
-      position: absolute;
-      width: 7vw;
-      top: 12vh;
-      left: 10vw;
-      }
-      .pentagon02{
-      width: 3.5vw;
-      position: absolute;
-      top: 20vh;
-      left: 38vw;
-      }
-      .pentagon03{
-      width: 20vw;
-      position: absolute;
-      top: 30vh;
-      left: 16vw;
-      }
-      .pentagon04{
-      width: 4vw;
-      position: absolute;
-      bottom: 12vh;
-      left: 14vw;
-      }
-      .pentagon05{
-      width: 6vw;
-      position: absolute;
-      top: 12vh;
-      right: 15vw;
-      }
-      .pentagon06{
-      width: 3vw;
-      position: absolute;
-      bottom: 26vh;
-      right: 43vw;
-      }
-      .pentagon07{
-      width: 5vw;
-      position: absolute;
-      bottom: 15vh;
-      right: 20vw;
-      }
-    }
-    .message-icon{
-      img{
-        width: 14vw;
-        position: absolute;
-        top: 40vh;
-        left: 20vw;
-      }
-    }
+      .inner{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        .contact-wrap{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 52%;
+          color: $colorWhite;
+          font-size: 3vw;
+          font-weight: 300;
+          .number{
+            color: $colorDark;
+            margin-bottom: 2vh;
+          }
+          .title{
+            margin-bottom: 3vh;
+          }
+          a{
+            font-size: 2vw;
+            color: $colorGray;
+            padding: .5vw 6vw;
+            text-align: center;
+            border: 1px solid $colorGray;
+          }
+        }
+    
+        .pentagon{
+          img.pentagon01{
+          position: absolute;
+          width: 7vw;
+          top: 12vh;
+          left: 10vw;
+          }
+          .pentagon02{
+          width: 3.5vw;
+          position: absolute;
+          top: 20vh;
+          left: 38vw;
+          }
+          .pentagon03{
+          width: 20vw;
+          position: absolute;
+          top: 30vh;
+          left: 16vw;
+          }
+          .pentagon04{
+          width: 4vw;
+          position: absolute;
+          bottom: 12vh;
+          left: 14vw;
+          }
+          .pentagon05{
+          width: 6vw;
+          position: absolute;
+          top: 12vh;
+          right: 15vw;
+          }
+          .pentagon06{
+          width: 3vw;
+          position: absolute;
+          bottom: 26vh;
+          right: 43vw;
+          }
+          .pentagon07{
+          width: 5vw;
+          position: absolute;
+          bottom: 15vh;
+          right: 20vw;
+          }
+        }
+        .message-icon{
+          img{
+            width: 14vw;
+            position: absolute;
+            top: 40vh;
+            left: 20vw;
+          }
+        }
+
+      } 
     .next{
       position: absolute;
       top: 50%;
@@ -515,9 +521,17 @@ section.contact{
         display: none;
       }
       &:hover{
-        margin-right: 1vw;
+        margin-right: .5vw;
       }
-    }}
+    }
   }
+}
+
+#container {
+  perspective: 30px;
+}
+
+#inner {
+  transition: transform 0.5s;
 }
 //http://narrowdesign.com/
