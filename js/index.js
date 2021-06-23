@@ -55,9 +55,8 @@ function onSkillClick() {
   var $numwrap = $('.gradient-wrapper').find('.number')
   var numarr = [95, 80, 90]
   var descarr = ['Lorem ipsum dolor sit amet consectetur adipisicing elit.','The discovery of the texts origin is attributed to Richard McClintock,', ' Consequatur cupiditate ad inventore ex eveniet at fugiat,']
-  console.log(  $('.desc'))
-  // $('.desc').removeClass('fadeInUp')
-  $('.desc').text(descarr[skillIndex]).show().removeClass('fadeInUp').addClass('fadeInUp')
+  $('.desc').removeClass('fadeInUp')
+  $('.desc').text(descarr[skillIndex]).show().addClass('fadeInUp')
 
   
   $title.find('li').removeClass('active')
@@ -86,9 +85,8 @@ function onSkillClick() {
 
 $title.find('li').click(onSkillClick);
   // Init
-  var container = document.getElementById("container"),
-      inner = document.getElementById("inner");
-
+  var container = $("#container")[0],
+      inner = $("#inner")[0];
 
   // Mouse
   var mouse = {
@@ -118,22 +116,19 @@ $title.find('li').click(onSkillClick);
 
   var counter = 0;
   var refreshRate = 10;
-  var isTimeToUpdate = function() {
+  var isTimeUpdate = function() {
     return counter++ % refreshRate === 0;
   };
 
   //----------------------------------------------------
 
-  var onMouseEnterHandler = function(event) {
-    update(event);
-  };
 
   var onMouseLeaveHandler = function() {
     inner.style = "";
   };
 
   var onMouseMoveHandler = function(event) {
-    if (isTimeToUpdate()) {
+    if (isTimeUpdate()) {
       update(event);
     }
   };
@@ -149,19 +144,19 @@ $title.find('li').click(onSkillClick);
   };
 
   var updateTransformStyle = function(x, y) {
+    console.log(x)
     var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
     inner.style.transform = style;
-    inner.style.webkitTransform = style;
-    inner.style.mozTranform = style;
-    inner.style.msTransform = style;
-    inner.style.oTransform = style;
+    // inner.style.webkitTransform = style;
+    // inner.style.mozTranform = style;
+    // inner.style.msTransform = style;
+    // inner.style.oTransform = style;
   };
 
   //--------------------------------------------------------
 
   container.onmousemove = onMouseMoveHandler;
   container.onmouseleave = onMouseLeaveHandler;
-  container.onmouseenter = onMouseEnterHandler;
 }
 
 
