@@ -395,7 +395,7 @@ section.portfolio{
   .black-wrapper{
     width: 100%;
     height: 100vh;
-    @include bgDark(.8);
+    @include bgDark(.2);
     position: relative;
     .button-wrap{
       position: absolute;
@@ -404,31 +404,53 @@ section.portfolio{
       .button{
         font-size: 2vw;
         padding: .7vh 1vw;
-        background-color: $colorDark;
+        @include bgDark(.6);
         display: inline-block;
         border-radius: 50px;
         margin: 5vh 3vw;
       }
       .button.active{
-        background-color: $colorLight;
+        @include bgDark(.2);
       }
     }
-    .slide-wrapper{
-      height: 70vh;
-      padding-top: 30vh;
-      .slide-wrap{
-        display: inline-block;
-        width: 33%;
-        text-align: center;
-        margin: auto;
-        .slide-img {
-        }
-        .slide-desc{
+      .slide-wrapper{
 
-
+        .slide-wrap{
+          position: absolute;
+          display: inline-block;
+          top: 25vh;
+          left: 50%;
+          transform: translateX(-50%);
+          .slide{
+          }
         }
       }
-    }
+
+    // .slide-wrapper{
+    //   width: 100%;
+    //   height: 100%;
+    //   text-align: center;
+    //   padding-top: 20vh;
+    //   border: 1px solid blue;
+      
+    //   .slide-wrap{ 
+    //     display: inline-block;
+    //     margin: 0 7vw;
+    //     border: 1px solid red;
+        
+    //     .slide-img {
+    //       z-index: 1;
+    //     }
+    //     .slide-desc{
+    //       z-index: 0;
+    //       height: 5vh;
+    //       @include bgDark(.3);
+    //     }
+    //     .slide-desc.active{
+    //       @include bgDark(.8);
+    //     }
+    //   }
+    // }
   }
 }
 
