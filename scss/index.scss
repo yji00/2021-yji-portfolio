@@ -404,7 +404,6 @@ section.portfolio{
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     video{
       object-fit: cover;
       width: 100%; height: 100%;
@@ -412,15 +411,15 @@ section.portfolio{
       position: absolute;
       }
     .black-wrapper{
-      position: relative;
+      position: absolute;
       z-index: 10;
       width: 100%;
       height: 100vh;
       @include bgDark(.2);
       .button-wrap{
         position: absolute;
-        // border: 2px solid $colorDark;
         @include flex($CT, $CT);
+        padding-right: 2.5vw;
         width: 100%;
         .button{
           font-size: 1.5vw;
@@ -433,6 +432,7 @@ section.portfolio{
           transform: scale(.7);
           opacity: .8;
           letter-spacing: 0.2vw;
+          cursor: pointer;
         }
         .button.active{
           border: none;
@@ -446,25 +446,58 @@ section.portfolio{
 
       .swiper-container{
         // border: 2px solid $colorDark;
-        // text-align: center;
-        .swiper-wrapper{
-
-          .swiper-slide{
-
-            .slide-img{
-              // position: relative;
-              // z-index: 2;
+            margin-top: 30vh;
+            text-align: center;
+            width: 100%;
+            height: 100vh;
+            .swiper-wrapper{
+              width: 100%;
+              .swiper-slide{
+                padding-top: 10vh;
+                transition: all 2s;
+                .slide-img{
+                  position: relative;
+                  z-index: 2;
+                  img{
+                    width: 15vw;
+                    height: 25vh;
+                    border-radius: 5%;
+                  }
+                }
+                .slide-desc{
+                  z-index: 1;
+                  top: 300px;
+                  left: 6vw;
+                  width: 20vw;
+                  height: 40vh;
+                  background: #ccc;
+                  position: absolute;
+                  border-radius: 5%;
+                  padding-top: 16vh;
+                  font-size: 1.3vw;
+                  font-weight: 400;
+                }
+              }
+              .swiper-slide.active{
+                padding-top: 0;
+                img{
+                  width: 20vw;
+                  height: 30vh;
+                  border-radius: 10%;
+                }
+                .slide-desc{
+                  top: 250px;
+                  left: 3.6vw;
+                  width: 25vw;
+                  height: 43vh;
+                  padding-top: 15vh;
+                  font-size: 2vw;
+                }
+              }
             }
-            .slide-desc{
-              // z-index: 1;
-              // top: 80px;
-              // background: #ccc;
-              // position: absolute;
-            }
-
           }
-        }
-      }
+
+
 
         //Virtual slides
       // .slide-wrapper{
