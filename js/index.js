@@ -110,14 +110,21 @@
     .querySelector(".f-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      swiper.slideTo(2, 0);
+      swiper.slideTo(1, 0);
     });
   document
     .querySelector(".b-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      swiper.slideTo(3, 0);
+      swiper.slideTo(2, 0);
     });
+
+		swiper.on('activeIndexChange', function() {
+			$('.swiper-slide').removeClass('active')
+			$('.swiper-slide').eq(swiper.realIndex).addClass('active')
+			console.log(swiper.realIndex); 
+		});
+
 
 
 
