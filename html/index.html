@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="../css/all.min.css">
   <link rel="stylesheet" href="../css/bootstrap-icons.css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/animate.compat.css">
+  <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../css/index.css">
   <script src="../js/jquery-3.6.0.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/wow.min.js"></script>
+  <script src="../js/moment.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
 
 </head>
 <body>
@@ -34,7 +35,7 @@
         <div class="title-wrap black-div">
           <div class="block"></div>
           <h2 class="title">FrontEnd</h2>
-          <h2 class="time">12:36</h2>
+          <h2 class="time"></h2>
         </div>
         <div class="port-wrap black-div">
           <ul class="port">
@@ -88,7 +89,7 @@
           <li class="BackEnd">BackEnd</li>
         </ul>
           <div class="number"></div>
-           <div class="desc-wrap"> <div class="desc"></div></div>
+          <div class="desc-wrap"> <div class="desc"></div></div>
         <div class="row-line"></div>
         <div class="col-line"></div>
         <div class="block"></div>
@@ -102,39 +103,46 @@
 
   <!--------------- Portfolio ---------------------->
   <section class="portfolio">
-    <div class="black-wrapper" >
-      <div class="button-wrap">
-        <div class="button">FrontEnd</div>
-        <div class="button active">FrontEnd</div>
-        <div class="button">FrontEnd</div>
-      </div>
-      <div class="slide-wrapper">
-        <div class="slide-wrap">
-          <div class="slide-img">
-            <img src="../img/slide01.png" alt="slide01">
-          </div>
-          <div class="slide-desc">
-            <p>hahahah</p>
-          </div>
+    <div class="video-wrap">
+      <video muted autoplay loop>
+        <source src="/img/video/Laptop.mp4" type="video/mp4">
+      </video>
+      <div class="black-wrapper" >
+        <div class="button-wrap">
+          <div class="button p-btn">Publishing</div>
+          <div class="button f-btn active">FrontEnd</div>
+          <div class="button b-btn">BackEnd</div>
         </div>
-        <div class="slide-wrap">
-          <div class="slide-img">
-            <img src="../img/slide02.png" alt="slide02">
-          </div>
-          <div class="slide-desc active">
-            <p>hahahah</p>
-          </div>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="../img/slide01.png" alt="slide01">
+                </div>
+                <div class="slide-desc">
+                  <p>hahahah</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-img active">
+                  <img src="../img/slide02.png" alt="slide02">
+                </div>
+                <div class="slide-desc active">
+                  <p>hahahah</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="../img/slide03.png" alt="slide03">
+                </div>
+                <div class="slide-desc">
+                  <p>hahahah</p>
+                </div>
+              </div>
+            </div>
         </div>
-        <div class="slide-wrap">
-          <div class="slide-img">
-            <img src="../img/slide03.png" alt="slide03">
-          </div>
-          <div class="slide-desc">
-            <p>hahahah</p>
-          </div>
-        </div>
-      </div>
       </div>  
+    </div>
   </section>
   <!--------------- contact ---------------------->
   <section class="contact">

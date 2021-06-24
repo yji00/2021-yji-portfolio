@@ -54,7 +54,7 @@ section.main{
       @include bgDark(.85);
       transition: all .5s;
       &:hover{
-        border-radius: 1.5vw;
+        border-radius: 3vw;
       }
     }
     .menu-wrap{
@@ -400,65 +400,99 @@ section.skill{
 
 section.portfolio{
   z-index: 8;
-  .black-wrapper{
+  .video-wrap{
+    position: relative;
     width: 100%;
     height: 100vh;
-    @include bgDark(.2);
-    position: relative;
-    .button-wrap{
+    overflow: hidden;
+    video{
+      object-fit: cover;
+      width: 100%; height: 100%;
+      opacity: .5;
       position: absolute;
-      left: 50%;
-      transform:translateX(-50%);
-      .button{
-        font-size: 2vw;
-        padding: .7vh 1vw;
-        @include bgDark(.6);
-        display: inline-block;
-        border-radius: 50px;
-        margin: 5vh 3vw;
       }
-      .button.active{
-        @include bgDark(.2);
-      }
-    }
-      .slide-wrapper{
-
-        .slide-wrap{
-          position: absolute;
+    .black-wrapper{
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100vh;
+      @include bgDark(.2);
+      .button-wrap{
+        position: absolute;
+        // border: 2px solid $colorDark;
+        @include flex($CT, $CT);
+        width: 100%;
+        .button{
+          font-size: 1.5vw;
+          font-weight: 300;
+          padding: 2vh 2vw;
+          border: 2px solid $colorDark;
           display: inline-block;
-          top: 25vh;
-          left: 50%;
-          transform: translateX(-50%);
-          .slide{
+          border-radius: 50px;
+          margin: 5vh 3vw;
+          transform: scale(.7);
+          opacity: .8;
+          letter-spacing: 0.2vw;
+        }
+        .button.active{
+          border: none;
+          font-weight: 400;
+          // border: 2px solid $colorDark;
+          @include bgDark(.2);
+          transform: scale(1.3);
+          opacity: 1;
+        }
+      }
+
+      .swiper-container{
+        // border: 2px solid $colorDark;
+        // text-align: center;
+        .swiper-wrapper{
+
+          .swiper-slide{
+
+            .slide-img{
+              // position: relative;
+              // z-index: 2;
+            }
+            .slide-desc{
+              // z-index: 1;
+              // top: 80px;
+              // background: #ccc;
+              // position: absolute;
+            }
+
           }
         }
       }
 
-    // .slide-wrapper{
-    //   width: 100%;
-    //   height: 100%;
-    //   text-align: center;
-    //   padding-top: 20vh;
-    //   border: 1px solid blue;
-      
-    //   .slide-wrap{ 
-    //     display: inline-block;
-    //     margin: 0 7vw;
-    //     border: 1px solid red;
+        //Virtual slides
+      // .slide-wrapper{
+      //   width: 100%;
+      //   height: 100%;
+      //   text-align: center;
+      //   padding-top: 20vh;
+      //   border: 1px solid blue;
         
-    //     .slide-img {
-    //       z-index: 1;
-    //     }
-    //     .slide-desc{
-    //       z-index: 0;
-    //       height: 5vh;
-    //       @include bgDark(.3);
-    //     }
-    //     .slide-desc.active{
-    //       @include bgDark(.8);
-    //     }
-    //   }
-    // }
+      //   .slide-wrap{ 
+      //     display: inline-block;
+      //     margin: 0 7vw;
+      //     border: 1px solid red;
+          
+      //     .slide-img {
+      //       z-index: 1;
+      //     }
+      //     .slide-desc{
+      //       z-index: 0;
+      //       height: 5vh;
+      //       @include bgDark(.3);
+      //     }
+      //     .slide-desc.active{
+      //       @include bgDark(.8);
+      //     }
+      //   }
+      // }
+    }
   }
 }
 

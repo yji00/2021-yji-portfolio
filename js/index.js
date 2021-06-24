@@ -1,12 +1,17 @@
 (function () {
 	
-	new WOW().init();
-	
+
 	var cnt = 0;
 	var elm = ".main";
 	var $skew = $('.skew-wrapper');
 	var $title = $('ul.skill-wrap');
-	
+  
+  setInterval(function(){
+    var time =  moment( new Date().getTime()).format('hh:mm')
+    $('.time').text(time)
+  },1000)
+
+  
 	
 	// 개별적으로 Wheel 이벤트 적용
 	// $(elm).on("mousewheel DOMMouseScroll", function (e) {
@@ -83,6 +88,39 @@
 	}
 	
 	$title.find('li').click(onSkillClick);
+
+
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    keyboard: {
+      enabled: true,
+    },
+  });
+
+  document
+    .querySelector(".p-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(0, 0);
+    });
+  document
+    .querySelector(".f-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(2, 0);
+    });
+  document
+    .querySelector(".b-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(3, 0);
+    });
+
+
+
 	// Init
 	var container = $("#container")[0],
 	inner = $("#inner")[0];
