@@ -98,6 +98,10 @@
     keyboard: {
       enabled: true,
     },
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
   });
 
   document
@@ -125,6 +129,10 @@
 			console.log(swiper.realIndex); 
 		});
 
+	$('.button').click(function(){
+		$('.button').removeClass('active')
+		$(this).addClass('active')
+	})
 
 
 
