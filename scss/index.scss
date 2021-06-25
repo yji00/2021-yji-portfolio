@@ -502,25 +502,25 @@ section.portfolio{
                   font-size: 1.3vw;
                   font-weight: 400;
                 }
-              }
-              .swiper-slide.active{
-                padding-top: 0;
-                img{
-                  width: 20vw;
-                  height: 30vh;
-                  border-radius: 10%;
+                &.active{
+                  padding-top: 0;
+                  img{
+                    width: 20vw;
+                    height: 30vh;
+                    border-radius: 10%;
+                  }
+                  .slide-desc{
+                    top: 250px;
+                    left: 3.6vw;
+                    width: 25vw;
+                    height: 43vh;
+                    padding-top: 15vh;
+                    font-size: 2vw;
+                    @include bgDark(.5);
+                  }
                 }
-                .slide-desc{
-                  top: 250px;
-                  left: 3.6vw;
-                  width: 25vw;
-                  height: 43vh;
-                  padding-top: 15vh;
-                  font-size: 2vw;
-                  @include bgDark(.5);
-                }
               }
-            }
+              }
           }
 
 
