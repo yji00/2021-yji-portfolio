@@ -482,10 +482,12 @@ section.portfolio{
                 .slide-img{
                   position: relative;
                   z-index: 2;
+
                   img{
                     width: 15vw;
                     height: 25vh;
                     border-radius: 5%;
+                    box-shadow: 0 15px 5px -5px gray;
                   }
                 }
                 .slide-desc{
@@ -508,6 +510,7 @@ section.portfolio{
                     width: 20vw;
                     height: 30vh;
                     border-radius: 10%;
+                    box-shadow: none;
                   }
                   .slide-desc{
                     top: 250px;
