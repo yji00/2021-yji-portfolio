@@ -60,6 +60,11 @@
 			'The discovery of the texts origin is attributed to Richard McClintock,',
 			' Consequatur cupiditate ad inventore ex eveniet at fugiat,'
 		]
+
+		$('.skill-desc').removeClass('active')
+		setTimeout(function () {
+			$('.skill-desc').addClass('active')
+		}, 500)
 		$('.desc').removeClass('active')
 		setTimeout(function () {
 			$('.desc').text(descarr[skillIndex]);
@@ -90,53 +95,53 @@
 	$title.find('li').click(onSkillClick);
 
 
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-	  breakpoints : {
-		  '767': { slidesPerView: 2, spaceBetween: 30 },
-		  '991': { slidesPerView: 3, spaceBetween: 30 },
-	  },
-    centeredSlides: true,
-    spaceBetween: 30,
-    loop: true,
-    keyboard: {
-      enabled: true,
-    },
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
-		},
-  });
+  // var swiper = new Swiper(".mySwiper", {
+  //   slidesPerView: 1,
+	//   breakpoints : {
+	// 	  '767': { slidesPerView: 2, spaceBetween: 30 },
+	// 	  '991': { slidesPerView: 3, spaceBetween: 30 },
+	//   },
+  //   centeredSlides: true,
+  //   spaceBetween: 30,
+  //   loop: true,
+  //   keyboard: {
+  //     enabled: true,
+  //   },
+	// 	autoplay: {
+	// 		delay: 2500,
+	// 		disableOnInteraction: false,
+	// 	},
+  // });
 
-  document
-    .querySelector(".p-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(0, 0);
-    });
-  document
-    .querySelector(".f-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(1, 0);
-    });
-  document
-    .querySelector(".b-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(2, 0);
-    });
+  // document
+  //   .querySelector(".p-btn")
+  //   .addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     swiper.slideTo(0, 0);
+  //   });
+  // document
+  //   .querySelector(".f-btn")
+  //   .addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     swiper.slideTo(1, 0);
+  //   });
+  // document
+  //   .querySelector(".b-btn")
+  //   .addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     swiper.slideTo(2, 0);
+  //   });
 
-		swiper.on('activeIndexChange', function() {
-			$('.swiper-slide').removeClass('active')
-			$('.swiper-slide').eq(swiper.realIndex).addClass('active')
-			console.log(swiper.realIndex); 
-		});
+	// 	swiper.on('activeIndexChange', function() {
+	// 		$('.swiper-slide').removeClass('active')
+	// 		$('.swiper-slide').eq(swiper.realIndex).addClass('active')
+	// 		console.log(swiper.realIndex); 
+	// 	});
 
-	$('.button').click(function(){
-		$('.button').removeClass('active')
-		$(this).addClass('active')
-	})
+	// $('.button').click(function(){
+	// 	$('.button').removeClass('active')
+	// 	$(this).addClass('active')
+	// })
 
 
 
