@@ -92,7 +92,7 @@
 		});
 	}
 	
-	$title.find('li').click(onSkillClick);
+	$title.find('li').mouseenter(onSkillClick);
 
 
   // var swiper = new Swiper(".mySwiper", {

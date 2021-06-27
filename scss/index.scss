@@ -226,6 +226,7 @@ section.main{
     .scroll-wrap{
       grid-area: scroll;
       position: relative;
+
       
       h3{
         position: absolute;
@@ -240,7 +241,7 @@ section.main{
         height: 6vh;
         background-color: rgba($color: #281315, $alpha: .8);
         z-index: 2;
-        top: 5vh;
+        top: 5%;
       }
       .video{
         position: absolute;
@@ -284,7 +285,6 @@ section.skill{
   z-index: 9;
   .gradient-wrapper{
     background: $colorGradient;
-    position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -293,94 +293,96 @@ section.skill{
         width: 98%;
         height: 96%;
       position: relative;
+      
       @include bgDark(1);
-      ul{
-        position: absolute;
+      .navi{
+        // position: absolute;
+        @include flex($CT, $CT);
+        width: 50%;
+        margin: auto;
         color: $colorLight;
-        font-size: 4vw;
-        margin-left: 10vw;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        line-height: 1.5;
+        padding: 5vh 0;
+        font-size: 1vw;
         cursor: pointer;
-        li{
-          transition: all 1s;
-          &:hover{
-            // font-size: 6vw;
+        .about{ 
+          padding-right: 3vw;  
+          &::before{
+            padding-right: 1vw;
+            content: '<';
+          }
+        }
+        .skill{
+          padding: 2vh 1vw;
+          font-size: 3vw;
+          border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
+        }
+        .portfolio{
+          padding-left: 3vw;
+          &::after{
+            padding-left: 1vw;
+            content: '>';
+          }
+        }
+        }
+      .skill-wrapper{
+        width: 100%;
+        height: 100%;
+        ul{
+          display: inline-block;
+          width: 25%;
+          height: 50%;
+          margin-left: 10vw;
+          color: $colorLight;
+          font-size: 4vw;
+          text-align: center;
+          line-height: 1.5;
+          cursor: pointer;
+                  li{
+            transition: all 1s;
+            &:hover{
+              transform: scale(1.5);
+              color: $colorWhite;
+            }
+          }
+          .active{
             transform: scale(1.5);
             color: $colorWhite;
           }
         }
-        .active{
-          transform: scale(1.5);
+        .number{
+          display: inline-block;
+          width: 25%;
+          height: 50%;
+          text-align: center;
+          vertical-align: center;
+          background-color: black;
+          font-size: 18vw;
           color: $colorWhite;
         }
-      }
-      .navi{
-      position: absolute;
-      @include flex($CT, $CT);
-      width: 100%;
-      color: $colorLight;
-      margin: 5vh 0;
-      font-size: 1vw;
-      cursor: pointer;
-      .about{ 
-        &::before{
-          padding-right: 1vw;
-          content: '<';
-        }
-      }
-      .skill{
-        padding: 0 4vw;
-        font-size: 3vw;
-      }
-      .portfolio{
-        &::after{
-          padding-left: 1vw;
-          content: '>';
-        }
-      }
-      }
-      .number{
-        position: absolute;
-        border: 1px solid #ccc;
-        font-size: 18vw;
-        color: $colorWhite;
-        left: 33vw;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .skill-desc{
-        font-size: 1.3em;
-        color: $colorLighter;
-        position: absolute;
-        width: 25vw;
-        right: 15vw;
-        top: 28vh;
-        transition: all .5s;
-        transform: translateX(-100%);
-        opacity: 0;
-        &.active{
-          transform: translateX(0);
-          opacity: 1;
-          
+        .skill-desc{
+          display: inline-block;
+          font-size: 1.3em;
+          color: $colorLighter;
+          width: 25%;
+          height: 50%;
+          vertical-align: top;
+          margin-top: 10vh;
+          transition: all .5s;
+          transform: translateX(-100%);
+          opacity: 0;
+          &.active{
+            transform: translateX(0);
+            opacity: 1;
+            
+          }
         }
       }
       .row-line{
         width: 2px;
         height: 100%;
+        right: 12vw;
+        top: 0;
         position: absolute;
-        right: 11vw;
-        background: $rowGradient;
-        opacity: .5;
-      }
-      .col-line{
-        width: 55%;
-        height: 2px;
-        position: absolute;
-        right: 0;
-        bottom: 20vh;
         background: $rowGradient;
         opacity: .5;
       }
@@ -459,23 +461,28 @@ section.portfolio{
       height: 100vh;
       @include bgDark(.8);
       .navi{
+        // position: absolute;
         @include flex($CT, $CT);
-        width: 100%;
+        width: 50%;
+        margin: 2vh auto;
+        // margin: auto;
         color: $colorLight;
-        margin-top: 5vh;
         font-size: 1vw;
         cursor: pointer;
         .about{ 
+          padding-right: 3vw;  
           &::before{
             padding-right: 1vw;
             content: '<';
           }
         }
         .skill{
-          padding: 0 4vw;
+          padding: 2vh 1vw;
           font-size: 3vw;
+          border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
         }
         .portfolio{
+          padding-left: 3vw;
           &::after{
             padding-left: 1vw;
             content: '>';
@@ -514,19 +521,20 @@ section.portfolio{
       }
 
       .swiper-container{
-        margin-top: 3%;
+        margin-top: 5vh;
         // border: 2px solid $colorDark;
             text-align: center;
             width: 100%;
-            height: 65vh;
+            height: 45%;
             .swiper-wrapper{
               width: 100%;
               .swiper-slide{
+                transform: scale(.6);
                 width: 33.333%;
                 text-align: center;
                 .slide-img{
                   display: inline-block;
-                  width: 80%;
+                  width: 65%;
                   padding-bottom: 10px;
                   border-bottom: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
                   color: rgba($color: #000000, $alpha: 0);
@@ -536,9 +544,9 @@ section.portfolio{
                 }
                 .slide-title{
                   display: inline-block;
-                  width: 80%;
+                  width: 65%;
                   padding: 1vh;
-                  font-size: 1.5em;
+                  font-size: 1.3em;
                   font-weight: 300;
                   letter-spacing: 2px;
                   color: #fff;
@@ -546,7 +554,7 @@ section.portfolio{
                 }
                 .slide-sub-wrap{
                   color: #fff;
-                  font-size: 1.3em;
+                  font-size: 1em;
                   font-weight: 300;
                   width: 100%;
                   @include flex($CT, baseline);
@@ -557,17 +565,17 @@ section.portfolio{
                     opacity: .8;
                     padding-right: 3.5%;
                     p{
-                      padding-bottom: 13%;
+                      padding-bottom: 15%;
                     }
                     p:nth-child(2){
-                      padding-bottom: 70%;
+                      padding-bottom: 72%;
                     }
                   }
                   .slide-sub-desc{
                     opacity: .5;
                     text-align: left;
                     width: 50%;
-                    font-size: .7em;
+                    font-size: .5em;
                     p{
                       padding-bottom: 6%;
                     }
@@ -606,10 +614,14 @@ section.portfolio{
                     }
                   }
                 }
+              &.active{
+                transform: scale(1);
+              }
               }
               }
           }
           .page{
+            padding-top: 3vh;
             color: $colorLight;
             font-size: 1vw;
             font-weight: 300;
@@ -621,7 +633,8 @@ section.portfolio{
               padding-right: 1.5vh;
               border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
               transition: all .5s;
-              transform: translateY(-300%);
+              // transform: translateY(-300%);
+              transform: translateY(0);
             }
             .after{
 
@@ -684,20 +697,23 @@ section.contact{
       @include flex($CT, $CT);
       width: 100%;
       color: $colorLight;
-      margin: 5vh 0;
+      margin: 2vh 0;
       font-size: 1vw;
       cursor: pointer;
       .about{ 
+        padding-right: 3vw;  
         &::before{
           padding-right: 1vw;
           content: '<';
         }
       }
       .skill{
-        padding: 0 4vw;
+        padding: 2vh 1vw;
         font-size: 3vw;
+        border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
       }
       .portfolio{
+        padding-left: 3vw;
         &::after{
           padding-left: 1vw;
           content: '>';
@@ -833,3 +849,15 @@ section.contact{
   transition: transform 0.5s;
 }
 //http://narrowdesign.com/
+
+/*****************반응형**********************/ 
+
+@include MD{
+  
+}
+@include SM{
+
+}
+@include XS{
+
+}
