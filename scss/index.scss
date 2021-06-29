@@ -640,13 +640,14 @@ section.portfolio{
             .swiper-wrapper{
               width: 100%;
               .swiper-slide{
+
                 transform: scale(.6);
-                width: 33.333%;
+                //width: 33.333%;
                 border: 1px solid #ccc;
                 text-align: center;
                 @include SM{
-                  width: 100%;
-                  transform: scale(.8);
+                  //width: 100%;
+                  //transform: scale(.8);
                 }
                 .slide-img{
                   display: inline-block;

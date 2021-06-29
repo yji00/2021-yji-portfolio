@@ -113,12 +113,12 @@
 
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
+	  spaceBetween: 30,
 	  breakpoints : {
-		  '767': { slidesPerView: 1, spaceBetween: 30 },
-		  '991': { slidesPerView: 3, spaceBetween: 30 },
+		  767: { slidesPerView: 2 },
+		  991: { slidesPerView: 3 },
 	  },
-    centeredSlides: true,
-    spaceBetween: 30,
+    //centeredSlides: true,
     loop: true,
     keyboard: {
       enabled: true,
