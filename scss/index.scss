@@ -10,7 +10,7 @@ html, body {
 }
 
 
-.section {overflow: hidden; width: 100%; height: 100vh; top: 0; left: 0; position: fixed;}
+// .section {overflow: hidden; width: 100%; height: 100vh; top: 0; left: 0; position: fixed;}
 
 .gnb-wrapper {
   width: 100%;
@@ -631,17 +631,23 @@ section.portfolio{
       }
 
       .swiper-container{
-        margin-top: 5vh;
+        // margin-top: 5vh;
         // border: 2px solid $colorDark;
             text-align: center;
             width: 100%;
             height: 45%;
+            border: 1px solid #ccc;
             .swiper-wrapper{
               width: 100%;
               .swiper-slide{
                 transform: scale(.6);
                 width: 33.333%;
+                border: 1px solid #ccc;
                 text-align: center;
+                @include SM{
+                  width: 100%;
+                  transform: scale(.8);
+                }
                 .slide-img{
                   display: inline-block;
                   width: 65%;

@@ -16,43 +16,43 @@
 
   
 	
-	//개별적으로 Wheel 이벤트 적용
-	$section.on("mousewheel DOMMouseScroll", function (e) {
-		e.preventDefault();
-		if(scrollChk) {
-			scrollChk = false;
-			var delta = 0;
-			if (!event) event = window.event;
-			if (event.wheelDelta) {
-				delta = event.wheelDelta;
-				if (window.opera) delta = -delta;
-			}
-			else if (event.detail)
-				delta = -event.detail;
-			console.log(delta)
+	// //개별적으로 Wheel 이벤트 적용
+	// $section.on("mousewheel DOMMouseScroll", function (e) {
+	// 	e.preventDefault();
+	// 	if(scrollChk) {
+	// 		scrollChk = false;
+	// 		var delta = 0;
+	// 		if (!event) event = window.event;
+	// 		if (event.wheelDelta) {
+	// 			delta = event.wheelDelta;
+	// 			if (window.opera) delta = -delta;
+	// 		}
+	// 		else if (event.detail)
+	// 			delta = -event.detail;
+	// 		console.log(delta)
 			
-			$section.each(function() {
-				$(this).css('z-index', 9);
-				$(this).css('transform', 'rotate(0)');
-			})
-			$section.eq(sectionIdx).css('z-index', 11);
+	// 		$section.each(function() {
+	// 			$(this).css('z-index', 9);
+	// 			$(this).css('transform', 'rotate(0)');
+	// 		})
+	// 		$section.eq(sectionIdx).css('z-index', 11);
 			
-			if (delta < 0) { // 마우스휠을 위에서 아래로
-				sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
-				$section.eq(sectionIdx).css('z-index', 10);
-				$(this).css('transform', 'rotate(-180deg)')
-			}
-			else { // 마우스휠을 아래에서 위로
-				sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
-				$section.eq(sectionIdx).css('z-index', 10);
-				$(this).css('transform', 'rotate(180deg)')
-			}
-			setTimeout(function() {
+	// 		if (delta < 0) { // 마우스휠을 위에서 아래로
+	// 			sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
+	// 			$section.eq(sectionIdx).css('z-index', 10);
+	// 			$(this).css('transform', 'rotate(-180deg)')
+	// 		}
+	// 		else { // 마우스휠을 아래에서 위로
+	// 			sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
+	// 			$section.eq(sectionIdx).css('z-index', 10);
+	// 			$(this).css('transform', 'rotate(180deg)')
+	// 		}
+	// 		setTimeout(function() {
 				
-				scrollChk = true;
-			}, 2000);
-		}
-	});
+	// 			scrollChk = true;
+	// 		}, 2000);
+	// 	}
+	// });
 	
 	function mouse(e) {
 	 var x = e.clientX;
@@ -111,53 +111,53 @@
 	$title.find('li').mouseenter(onSkillClick);
 
 
-  // var swiper = new Swiper(".mySwiper", {
-  //   slidesPerView: 1,
-	//   breakpoints : {
-	// 	  '767': { slidesPerView: 2, spaceBetween: 30 },
-	// 	  '991': { slidesPerView: 3, spaceBetween: 30 },
-	//   },
-  //   centeredSlides: true,
-  //   spaceBetween: 30,
-  //   loop: true,
-  //   keyboard: {
-  //     enabled: true,
-  //   },
-	// 	autoplay: {
-	// 		delay: 2500,
-	// 		disableOnInteraction: false,
-	// 	},
-  // });
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+	  breakpoints : {
+		  '767': { slidesPerView: 1, spaceBetween: 30 },
+		  '991': { slidesPerView: 3, spaceBetween: 30 },
+	  },
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    keyboard: {
+      enabled: true,
+    },
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+  });
 
-  // document
-  //   .querySelector(".p-btn")
-  //   .addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     swiper.slideTo(0, 0);
-  //   });
-  // document
-  //   .querySelector(".f-btn")
-  //   .addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     swiper.slideTo(1, 0);
-  //   });
-  // document
-  //   .querySelector(".b-btn")
-  //   .addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     swiper.slideTo(2, 0);
-  //   });
+  document
+    .querySelector(".p-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(0, 0);
+    });
+  document
+    .querySelector(".f-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(1, 0);
+    });
+  document
+    .querySelector(".b-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      swiper.slideTo(2, 0);
+    });
 
-	// 	swiper.on('activeIndexChange', function() {
-	// 		$('.swiper-slide').removeClass('active')
-	// 		$('.swiper-slide').eq(swiper.realIndex).addClass('active')
-	// 		console.log(swiper.realIndex); 
-	// 	});
+		swiper.on('activeIndexChange', function() {
+			$('.swiper-slide').removeClass('active')
+			$('.swiper-slide').eq(swiper.realIndex).addClass('active')
+			console.log(swiper.realIndex); 
+		});
 
-	// $('.button').click(function(){
-	// 	$('.button').removeClass('active')
-	// 	$(this).addClass('active')
-	// })
+	$('.button').click(function(){
+		$('.button').removeClass('active')
+		$(this).addClass('active')
+	})
 
 
 
