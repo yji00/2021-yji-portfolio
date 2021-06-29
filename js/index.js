@@ -24,13 +24,13 @@
 			var delta = 0;
 			if (!event) event = window.event;
 			if (event.wheelDelta) {
-				delta = event.wheelDelta / 120;
+				delta = event.wheelDelta;
 				if (window.opera) delta = -delta;
 			}
 			else if (event.detail)
-				delta = -event.detail / 3;
-			
+				delta = -event.detail;
 			console.log(delta)
+			
 			$section.each(function() {
 				$(this).css('z-index', 9);
 				$(this).css('transform', 'rotate(0)');
