@@ -19,7 +19,7 @@
 	//개별적으로 Wheel 이벤트 적용
 	$section.on("mousewheel DOMMouseScroll", function (e) {
 		e.preventDefault();
-		//if(scrollChk) {
+		if(scrollChk) {
 			scrollChk = false;
 			var delta = 0;
 			if (!event) event = window.event;
@@ -51,7 +51,7 @@
 				
 				scrollChk = true;
 			}, 2000);
-		//}
+		}
 	});
 	
 	function mouse(e) {
