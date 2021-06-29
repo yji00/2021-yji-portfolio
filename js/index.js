@@ -1,8 +1,11 @@
 (function () {
 
-
-	var cnt = 0;
+	
 	var elm = ".main";
+	var scrollChk = true;
+	var $section = $('.section');
+	var sectionLast = $section.length - 1;
+	var sectionIdx = 0;
 	var $skew = $('.skew-wrapper');
 	var $title = $('ul.skill-wrap');
   
@@ -13,41 +16,54 @@
 
   
 	
-	// 개별적으로 Wheel 이벤트 적용
-	// $(elm).on("mousewheel DOMMouseScroll", function (e) {
-	// 	e.preventDefault();
-	// 	var delta = 0;
-	// 	if (!event) event = window.event;
-	// 	if (event.wheelDelta) {
-	// 		delta = event.wheelDelta / 120;
-	// 		if (window.opera) delta = -delta;
-	// 	}
-	// 	else if (event.detail)
-	// 		delta = -event.detail / 3;
-	// 	// 마우스휠을 위에서 아래로
-	// 	if (delta < 0) {
-	// 		cnt++;
-	// 	}
-	// 	else { // 마우스휠을 아래에서 위로
-	// 		cnt--;
-	// 	}
-	// 	var rotate = cnt ;
-	// 	var scale = 1 - (cnt / 100);
+	//개별적으로 Wheel 이벤트 적용
+	$section.on("mousewheel DOMMouseScroll", function (e) {
+		e.preventDefault();
+		//if(scrollChk) {
+			scrollChk = false;
+			var delta = 0;
+			if (!event) event = window.event;
+			if (event.wheelDelta) {
+				delta = event.wheelDelta / 120;
+				if (window.opera) delta = -delta;
+			}
+			else if (event.detail)
+				delta = -event.detail / 3;
+			
+			console.log(delta)
+			$section.each(function() {
+				$(this).css('z-index', 9);
+				$(this).css('transform', 'rotate(0)');
+			})
+			$section.eq(sectionIdx).css('z-index', 11);
+			
+			if (delta < 0) { // 마우스휠을 위에서 아래로
+				sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
+				$section.eq(sectionIdx).css('z-index', 10);
+				$(this).css('transform', 'rotate(-180deg)')
+			}
+			else { // 마우스휠을 아래에서 위로
+				sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
+				$section.eq(sectionIdx).css('z-index', 10);
+				$(this).css('transform', 'rotate(180deg)')
+			}
+			setTimeout(function() {
+				
+				scrollChk = true;
+			}, 2000);
+		//}
+	});
 	
-	// 	console.log(cnt);
-	// 	$(this).css('transform', 'rotate('+rotate+'deg) scale('+scale+')')
-	// });
+	function mouse(e) {
+	 var x = e.clientX;
+	 var y = e.clientY;
+	 var coor = 'Coordinates: (' + x + ',' + y + ')';
+	 //console.log(coor);
+	 //console.log($skew);
+	 $skew.css('transform', 'perspective(' + x * 0.1 + 'px)');
+	}
 	
-	// function mouse(e) {
-	//   var x = e.clientX;
-	//   var y = e.clientY;
-	//   var coor = 'Coordinates: (' + x + ',' + y + ')';
-	//   console.log(coor);
-	//   console.log($skew);
-	//   $skew.css('transform', 'perspective('+x*0.1+'px)');
-	
-	// }
-	// $('.black-wrapper').mousemove(mouse);
+	$('.black-wrapper').mousemove(mouse);
 	
 	
 	function onSkillClick() {
