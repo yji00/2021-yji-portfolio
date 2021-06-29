@@ -49,7 +49,16 @@ section.main{
 		"menu port port port scroll scroll"
 		"menu port port port scroll scroll"
 		"menu port port port next next";
-    
+    @include XS{
+      grid-template-areas:
+      "menu title title title"
+      "menu port port port"
+      "menu port port port"
+      "menu port port port"
+      "menu port port port"
+      "menu next next next";
+    }
+
     .black-div{
       @include bgDark(.85);
       transition: all .5s;
@@ -78,6 +87,10 @@ section.main{
         left: 50%;
         transform: translateX(-50%);
         top: 2vh;
+        @include XS{
+          font-size: 3.5vw;
+          padding: 1em 1.2em;
+        }
       }
       .menu{
         position: absolute;
@@ -88,6 +101,9 @@ section.main{
         font-weight: 300;
         line-height: 1;
         cursor: pointer;
+        @include XS{
+          font-size: 3vw;
+        }
         li{
           // border: solid red 1px;
           margin: 6vh 0;
@@ -160,6 +176,9 @@ section.main{
         padding: 0 0 0 2.5vw;
         color: $colorWhite;
         font-weight: 500;
+        @include XS{
+          font-size: 12vw;
+        }
       }
       .time{
         position: absolute;
@@ -185,6 +204,9 @@ section.main{
         font-weight: 400;
         top: 50%;
         transform: translateY(-50%);
+        @include XS{
+          font-size: 10vw;
+        }
         li{
           text-align: end;
           margin: 7vh 0;
@@ -221,12 +243,17 @@ section.main{
         background-color: #607b5a;
         bottom: 0;
         right: 0;
+        @include XS{
+          display: none;
+        }
       }
     }
     .scroll-wrap{
       grid-area: scroll;
       position: relative;
-
+      @include XS{
+        display: none;
+      }
       
       h3{
         position: absolute;
@@ -265,6 +292,9 @@ section.main{
       grid-area: next;
       position: relative;
       cursor: pointer;
+      // @include XS{
+      //   display: none;
+      // }
       img{
         position: absolute;
         right: 0;
@@ -327,6 +357,13 @@ section.skill{
       .skill-wrapper{
         width: 100%;
         height: 100%;
+        margin-top: 6%;
+        // @include SM{
+        //   margin-top: 13%;
+        // }
+        // @include XS{
+        //   margin-top: 25%;
+        // }
         ul.skill-wrap{
           display: inline-block;
           width: 25%;
@@ -337,6 +374,15 @@ section.skill{
           text-align: center;
           line-height: 1.5;
           cursor: pointer;
+          @include SM{
+            width: 50%;
+            margin-top: 10%;
+            height: 20%;
+            border: 1px solid #ccc;
+          }
+          @include XS{
+            margin-top: 20%;
+          }
                   li{
             transition: all 1s;
             &:hover{
@@ -358,6 +404,9 @@ section.skill{
           background-color: black;
           font-size: 18vw;
           color: $colorWhite;
+          @include SM{
+            height: 20%;
+          }
         }
         .skill-desc{
           display: inline-block;
@@ -367,14 +416,38 @@ section.skill{
           transition: all .5s;
           transform: translateX(-100%);
           opacity: 0;
+          @include SM{
+            text-align: end;
+            width: 100%;
+            transform: translateX(100%);
+            padding-right: 13%;
+          }
+          @include XS{
+            text-align: end;
+            width: 100%;
+            transform: translateX(100%);
+            padding-right: 13%;
+          }
           // border: 1px solid #ccc;
           ul{
             font-size: 1em;
             color: $colorLighter;
             padding: 3% 0;
             li{
-              padding: 3% 2%;
+              padding: 5% 2%;
               line-height: 1.3;
+              @include SM{
+                padding: 1.5% 2%;
+                line-height: 1;
+              }
+              @media screen and (max-width: 440px) {
+                padding: 5% 2%;
+                line-height: 1.3;
+              }
+              // @include XS{
+              //   padding: 5% 2%;
+              //   line-height: 1.3;
+              // }
 
               // &::before{
               //   display: inline-block;
@@ -410,6 +483,9 @@ section.skill{
         bottom: 20vh;
         background: $colGradient;
         opacity: .5;
+        @include SM{
+          bottom: 10%;
+        }
       }
       .block{
         width: 3vw;
@@ -432,6 +508,10 @@ section.skill{
         opacity: 0;
         transform: translateY(300%);
         transition: all .35s;
+        @include SM{
+          top: 92%;
+          left: 45%;
+        }
         &.active {
           opacity: 1;
           transform: translateY(0);
@@ -445,6 +525,13 @@ section.skill{
         @include flex($FS, $FE);
         right: 7vw;
         top: 78vh;
+        @include SM{
+          top: 88vh;
+          right: 5vw;
+        }
+        @include XS{
+          right: 3vw;
+        }
         .pre{
           font-size: 3vw;
           padding-right: 1.5vh;
@@ -518,13 +605,19 @@ section.portfolio{
           font-size: .5em;
           font-weight: 300;
           color: $colorLighter;
-          padding: 1% 3% ;
+          padding: 1% 5% ;
           border: 2px solid $colorLight;
           border-radius: 50px;
           opacity: .8;
           letter-spacing: 0.2vw;
           cursor: pointer;
           transition: all .5s;
+          @include SM{
+            padding: 2% 6% ;
+          }
+          @include XS{
+            padding: 2% 10% ;
+          }
         }
         .button.active{
           font-size: 1em;
@@ -579,7 +672,13 @@ section.portfolio{
                     text-align: end;
                     width: 20%;
                     opacity: .8;
-                    padding-right: 3.5%;
+                    margin-right: 10px;
+                    @include SM{
+                      width: 30%;
+                    }
+                    @include XS{
+                      width: 40%;
+                    }
                     p{
                       padding-bottom: 15%;
                     }
@@ -801,6 +900,14 @@ section.contact{
           position: absolute;
           top: 30vh;
           left: 16vw;
+          @include SM{
+            width: 25vw;
+            top: 35vh;
+          }
+          @include XS{
+            width: 30vw;
+            top: 40vh;
+          }
           }
           .pentagon04{
           width: 4vw;
@@ -833,6 +940,13 @@ section.contact{
             position: absolute;
             top: 40vh;
             left: 20vw;
+            @include SM{
+              width: 20vw;
+              top: 45vh;
+            }
+            @include XS{
+              width: 25vw;
+            }
           }
         }
 
@@ -869,7 +983,7 @@ section.contact{
 /*****************반응형**********************/ 
 
 @include MD{
-  
+
 }
 @include SM{
 
