@@ -53,6 +53,10 @@
 	// 		}, 2000);
 	// 	}
 	// });
+
+
+
+
 	
 	function mouse(e) {
 	 var x = e.clientX;
@@ -76,11 +80,13 @@
 			'The discovery of the texts origin is attributed to Richard McClintock,',
 			' Consequatur cupiditate ad inventore ex eveniet at fugiat,'
 		]
-
-		$('.skill-desc').removeClass('active')
+		console.log(this)
+		var sk_idx = $(this).index()
+		$('.skill-desc').find($('ul')).hide().removeClass('active')
 		setTimeout(function () {
-			$('.skill-desc').addClass('active')
-		}, 500)
+		$('.skill-desc').find('ul').eq(sk_idx).show().addClass('active')
+	}, 500)
+
 		$('.desc').removeClass('active')
 		setTimeout(function () {
 			$('.desc').text(descarr[skillIndex]);
@@ -108,7 +114,7 @@
 		});
 	}
 	
-	$title.find('li').mouseenter(onSkillClick);
+	$title.find('li').mouseover(onSkillClick);
 
 
   var swiper = new Swiper(".mySwiper", {

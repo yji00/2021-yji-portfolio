@@ -375,13 +375,13 @@ section.skill{
           text-align: center;
           line-height: 1.5;
           cursor: pointer;
-          @include SM{
+          @media screen and (max-width: 830px) {
             width: 50%;
             margin-top: 10%;
             height: 20%;
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
           }
-          @include XS{
+          @include SM{
             margin-top: 20%;
           }
                   li{
@@ -405,39 +405,50 @@ section.skill{
           background-color: black;
           font-size: 18vw;
           color: $colorWhite;
-          @include SM{
+          @media screen and (max-width: 830px) {
             height: 20%;
           }
         }
         .skill-desc{
           display: inline-block;
           width: 25%;
-          height: 40%;
+          height: 30%;
           vertical-align: top;
-          transition: all .5s;
-          transform: translateX(-100%);
-          opacity: 0;
-          @include SM{
-            text-align: end;
+          @media screen and (max-width: 830px) {
             width: 100%;
-            transform: translateX(100%);
-            padding-right: 13%;
           }
-          @include XS{
-            text-align: end;
+          @include SM{
             width: 100%;
-            transform: translateX(100%);
-            padding-right: 13%;
           }
           // border: 1px solid #ccc;
           ul{
-            font-size: 1em;
+            font-size: 1.3vw;
             color: $colorLighter;
             padding: 3% 0;
+            transition: all .5s;
+            transform: translateX(-100%);
+            opacity: 0;
+            &.active{
+              transform: translateX(0);
+              opacity: 1;
+            }
+              @media screen and (max-width: 830px) {
+                text-align: end;
+                width: 100%;
+                transform: translateX(100%);
+                padding-right: 13%;
+                // border: 1px solid #ccc;
+              }
+              // @include SM{
+                // text-align: end;
+                // width: 100%;
+                // transform: translateX(100%);
+                // padding-right: 13%;
+              // }
             li{
               padding: 5% 2%;
               line-height: 1.3;
-              @include SM{
+              @include MD{
                 padding: 1.5% 2%;
                 line-height: 1;
               }
@@ -460,11 +471,7 @@ section.skill{
               // }
             }
           }
-          &.active{
-            transform: translateX(0);
-            opacity: 1;
-            
-          }
+
         }
       }
       .row-line{
@@ -635,19 +642,29 @@ section.portfolio{
         // border: 2px solid $colorDark;
             text-align: center;
             width: 100%;
-            height: 45%;
-            border: 1px solid #ccc;
+            height: 65vh;
+            // border: 1px solid #ccc;
             .swiper-wrapper{
               width: 100%;
               .swiper-slide{
-
                 transform: scale(.6);
                 //width: 33.333%;
-                border: 1px solid #ccc;
+                // border: 1px solid #ccc;
                 text-align: center;
+                @include LG{
+                  padding: 10% 0;
+                  height: 70vh;
+                  transform: scale(.9);
+                }
+                @include MD{
+                  padding-top: 10%;
+                  transform: scale(1);
+                }
                 @include SM{
-                  //width: 100%;
-                  //transform: scale(.8);
+                  padding-top: 10%;
+                }
+                @include XS{
+                  padding-top: 30%;
                 }
                 .slide-img{
                   display: inline-block;
@@ -692,6 +709,9 @@ section.portfolio{
                     }
                     p:nth-child(2){
                       padding-bottom: 72%;
+                      @include SM{
+                        padding-bottom: 35%;
+                      }
                     }
                   }
                   .slide-sub-desc{
@@ -701,9 +721,13 @@ section.portfolio{
                     font-size: .5em;
                     p{
                       padding-bottom: 6%;
+                      @include SM{
+                        padding-bottom: 10%;
+                      }
                     }
                     p:nth-child(2){
                       padding-bottom: 4%;
+
                       &::before{
                         display: inline-block;
                         width: 13px;
@@ -725,7 +749,7 @@ section.portfolio{
                       }
                     }
                     p:nth-child(4){
-                      padding-bottom: 7%;
+                      padding-bottom: 15%;
                       &::before{
                         display: inline-block;
                         width: 13px;
