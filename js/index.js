@@ -118,6 +118,7 @@
 
 
 
+
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
 	  spaceBetween: 30,
@@ -140,19 +141,19 @@
     .querySelector(".p-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      swiper.slideTo(0, 0);
+      swiper.slideTo(3, 0);
     });
   document
     .querySelector(".f-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      swiper.slideTo(1, 0);
+      swiper.slideTo(6, 0);
     });
   document
     .querySelector(".b-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      swiper.slideTo(2, 0);
+      swiper.slideTo(9, 0);
     });
 
 		swiper.on('activeIndexChange', function() {
