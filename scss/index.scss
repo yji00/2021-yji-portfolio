@@ -50,7 +50,7 @@ section.main{
 		"menu port port port scroll scroll"
 		"menu port port port scroll scroll"
 		"menu port port port next next";
-    @include XS{
+    @include SM{
       grid-template-areas:
       "menu title title title"
       "menu port port port"
@@ -102,7 +102,7 @@ section.main{
         font-weight: 300;
         line-height: 1;
         cursor: pointer;
-        @include XS{
+        @include SM{
           font-size: 3vw;
         }
         li{
@@ -177,7 +177,7 @@ section.main{
         padding: 0 0 0 2.5vw;
         color: $colorWhite;
         font-weight: 500;
-        @include XS{
+        @include SM{
           font-size: 12vw;
         }
       }
@@ -244,7 +244,7 @@ section.main{
         background-color: #607b5a;
         bottom: 0;
         right: 0;
-        @include XS{
+        @include SM{
           display: none;
         }
       }
@@ -252,7 +252,7 @@ section.main{
     .scroll-wrap{
       grid-area: scroll;
       position: relative;
-      @include XS{
+      @include SM{
         display: none;
       }
       

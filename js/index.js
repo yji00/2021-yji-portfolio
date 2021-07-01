@@ -70,7 +70,7 @@
 	$('.black-wrapper').mousemove(mouse);
 	
 	
-	function onSkillClick() {
+	function onSkillOver() {
 		console.log(this)
 		var skillIndex = $(this).index()
 		var $numwrap = $('.gradient-wrapper').find('.number')
@@ -114,7 +114,8 @@
 		});
 	}
 	
-	$title.find('li').mouseover(onSkillClick);
+	$title.find('li').mouseover(onSkillOver);
+
 
 
   var swiper = new Swiper(".mySwiper", {
