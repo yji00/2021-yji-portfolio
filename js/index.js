@@ -30,13 +30,13 @@
 	// 		else if (event.detail)
 	// 			delta = -event.detail;
 	// 		console.log(delta)
-			
+	
 	// 		$section.each(function() {
 	// 			$(this).css('z-index', 9);
 	// 			$(this).css('transform', 'rotate(0)');
 	// 		})
 	// 		$section.eq(sectionIdx).css('z-index', 11);
-			
+	
 	// 		if (delta < 0) { // 마우스휠을 위에서 아래로
 	// 			sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
 	// 			$section.eq(sectionIdx).css('z-index', 10);
@@ -48,7 +48,7 @@
 	// 			$(this).css('transform', 'rotate(180deg)')
 	// 		}
 	// 		setTimeout(function() {
-				
+	
 	// 			scrollChk = true;
 	// 		}, 2000);
 	// 	}
@@ -69,7 +69,7 @@
 	
 	$('.black-wrapper').mousemove(mouse);
 	
-	
+	var timeout;
 	function onSkillOver() {
 		console.log(this)
 		var skillIndex = $(this).index()
@@ -82,10 +82,12 @@
 		]
 		console.log(this)
 		var sk_idx = $(this).index()
-		$('.skill-desc').find($('ul')).hide().removeClass('active')
-		setTimeout(function () {
-		$('.skill-desc').find('ul').eq(sk_idx).show().addClass('active')
-	}, 500)
+		$('.skill-desc').find('ul').hide()
+		$('.skill-desc').find('ul').removeClass('active')
+		clearTimeout(timeout)
+		timeout = setTimeout(function () {
+			$('.skill-desc').find('ul').eq(sk_idx).show().addClass('active')
+		}, 500)
 
 		$('.desc').removeClass('active')
 		setTimeout(function () {
@@ -132,7 +134,7 @@
       enabled: true,
     },
 		autoplay: {
-			delay: 2500,
+			delay: 3000,
 			disableOnInteraction: false,
 		},
   });
@@ -156,10 +158,9 @@
       swiper.slideTo(9, 0);
     });
 
-		swiper.on('activeIndexChange', function() {
+		swiper.on('slideChange', function() {
 			$('.swiper-slide').removeClass('active')
-			$('.swiper-slide').eq(swiper.realIndex).addClass('active')
-			console.log(swiper.realIndex); 
+			$('.swiper-slide').eq(swiper.activeIndex + 1).addClass('active')
 		});
 
 	$('.button').click(function(){
