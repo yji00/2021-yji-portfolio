@@ -1,6 +1,13 @@
 (function () {
 
-	
+	if (window.navigator.userAgent.match(/MSIE|Internet Explorer|Trident/i)) {
+    // IE!!
+		window.location = "microsoft-edge:" + window.location.href;
+		$('.gnb-wrapper').hide();
+		$('.ex-wrapper').show();
+	}
+
+
 	var elm = ".main";
 	var scrollChk = true;
 	var $section = $('.section');

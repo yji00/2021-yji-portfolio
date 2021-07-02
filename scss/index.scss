@@ -1013,16 +1013,36 @@ section.contact{
 #inner {
   transition: transform 0.5s;
 }
+
+.ex-wrapper{
+  display: none;
+  section.ex{
+    width: 100%;
+    height: 100vh;
+    .gradient-wrapper{
+      background: $colorGradient;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      .black-wrapper{
+        margin: 1%;
+        width: 98%;
+        height: 96%;
+        position: relative;
+        @include bgDark(.85);
+        ul{
+          color: $colorLight;
+          padding: 10%;
+          font-size: 2.5em;
+          li{
+            padding: .5em 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 /* http://narrowdesign.com/ */
 
-/*****************반응형**********************/ 
-
-@include MD{
-
-}
-@include SM{
-
-}
-@include XS{
-
-}
