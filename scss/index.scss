@@ -1037,6 +1037,18 @@ section.contact{
           font-size: 2.5em;
           li{
             padding: .5em 0;
+            &:nth-child(1){
+              font-size: .8em;
+            }
+            &:nth-child(2){
+              // font-size: .7em;
+              
+            }
+            &:nth-child(3){
+              font-size: .5em;
+              line-height: 1.3;
+
+            }
           }
         }
       }
