@@ -165,6 +165,7 @@
       swiper.slideTo(9, 0);
     });
 
+
 		swiper.on('slideChange', function() {
 			$('.swiper-slide').removeClass('active')
 			$('.swiper-slide').eq(swiper.activeIndex + 1).addClass('active')

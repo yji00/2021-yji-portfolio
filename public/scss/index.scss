@@ -650,6 +650,7 @@ section.portfolio{
             .swiper-wrapper{
               width: 100%;
               .swiper-slide{
+                transition: all .5s;
                 transform: scale(.6);
                 //width: 33.333%;
                 // border: 1px solid #ccc;
@@ -713,7 +714,7 @@ section.portfolio{
                     p:nth-child(2){
                       padding-bottom: 72%;
                       @include SM{
-                        padding-bottom: 35%;
+                        padding-bottom: 45%;
                       }
                     }
                   }
@@ -721,47 +722,67 @@ section.portfolio{
                     opacity: .5;
                     text-align: left;
                     width: 50%;
-                    font-size: .5em;
+                    font-size: .7em;
+                    .sub-color{
+                      padding-bottom: 4%;
+                      .color{
+                        display: inline-block;
+                        width: 13px;
+                        height: 13px;
+                        content: '';
+                        margin-right: 8px;
+                      }
+                      p{
+                        display: inline-block;
+                        padding-bottom: 4%;
+                      }
+                      p:last-child{
+                        padding-bottom: 10%;
+                        @include SM{
+                          padding-bottom: 8%;
+                        }
+                      }
+                    }
                     p{
-                      padding-bottom: 6%;
+                      padding-bottom: 7%;
                       @include SM{
                         padding-bottom: 10%;
                       }
                     }
-                    p:nth-child(2){
-                      padding-bottom: 4%;
+                    // p:nth-child(2){
+                    //   padding-bottom: 4%;
 
-                      &::before{
-                        display: inline-block;
-                        width: 13px;
-                        height: 13px;
-                        content: '';
-                        background-color: #C6FFDD;
-                        margin-right: 8px;
-                      }
-                    }
-                    p:nth-child(3){
-                      padding-bottom: 4%;
-                      &::before{
-                        display: inline-block;
-                        width: 13px;
-                        height: 13px;
-                        content: '';
-                        background-color: #FBD786;
-                        margin-right: 8px;
-                      }
-                    }
-                    p:nth-child(4){
-                      padding-bottom: 15%;
-                      &::before{
-                        display: inline-block;
-                        width: 13px;
-                        height: 13px;
-                        content: '';
-                        background-color: #f7797d;
-                        margin-right: 8px;
-                      }
-                    }
+                    //   // &::before{
+                    //   //   display: inline-block;
+                    //   //   width: 13px;
+                    //   //   height: 13px;
+                    //   //   content: '';
+                    //   //   background-color: #C6FFDD;
+                    //   //   margin-right: 8px;
+                    //   // }
+                    // }
+                    // p:nth-child(3){
+                    //   padding-bottom: 4%;
+                    //   // &::before{
+                    //   //   display: inline-block;
+                    //   //   width: 13px;
+                    //   //   height: 13px;
+                    //   //   content: '';
+                    //   //   background-color: #FBD786;
+                    //   //   margin-right: 8px;
+                    //   // }
+                    // }
+                    // p:nth-child(4){
+                    //   padding-bottom: 15%;
+                    //   // &::before{
+                    //   //   display: inline-block;
+                    //   //   width: 13px;
+                    //   //   height: 13px;
+                    //   //   content: '';
+                    //   //   background-color: #f7797d;
+                    //   //   margin-right: 8px;
+                    //   // }
+                    // }
                   }
                 }
               &.active{
@@ -834,7 +855,7 @@ section.portfolio{
   }
 }
 
-//https://www.raoul-gaillard.com/work
+
 section.contact{
   z-index: 7;
   .black-wrapper{
@@ -1058,3 +1079,4 @@ section.contact{
 
 /* http://narrowdesign.com/ */
 
+//https://www.raoul-gaillard.com/work
