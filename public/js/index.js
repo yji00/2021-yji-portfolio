@@ -83,7 +83,7 @@
 		var $numwrap = $('.gradient-wrapper').find('.number')
 		var numarr = [95, 80, 90]
 		var descarr = [
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+			'My available web Publishing skills',
 			'The discovery of the texts origin is attributed to Richard McClintock,',
 			' Consequatur cupiditate ad inventore ex eveniet at fugiat,'
 		]

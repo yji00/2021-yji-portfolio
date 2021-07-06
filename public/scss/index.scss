@@ -7,6 +7,9 @@
 
 html, body {
   font-family: 'Oswald', sans-serif;
+  @include SM{
+    font-size: 1.25em;
+  }
 }
 
 
@@ -414,6 +417,12 @@ section.skill{
           width: 25%;
           height: 30%;
           vertical-align: top;
+          li {
+            color: #fff;
+            p {
+              color: $colorLight;
+            }
+          }
           @media screen and (max-width: 830px) {
             width: 100%;
           }
