@@ -470,6 +470,9 @@ section.skill{
               p{
                 color: $colorLight;
                 font-size: 1vw;
+                @include XS{
+                  font-size: 4vw;
+                }
               }
               @include MD{
                 padding: 1.5% 2%;
@@ -481,10 +484,10 @@ section.skill{
                 line-height: 1.3;
                 font-size: 5vw;
               }
-              // @include XS{
-              //   padding: 5% 2%;
-              //   line-height: 1.3;
-              // }
+              @include XS{
+                line-height: 1.5;
+                font-size: 5vw;
+              }
 
               // &::before{
               //   display: inline-block;
