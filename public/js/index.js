@@ -84,8 +84,8 @@
 		var numarr = [95, 80, 90]
 		var descarr = [
 			'My available web Publishing skills',
-			'The discovery of the texts origin is attributed to Richard McClintock,',
-			' Consequatur cupiditate ad inventore ex eveniet at fugiat,'
+			'My available web FrontEnd skills',
+			'My available web BackEnd skills'
 		]
 		console.log(this)
 		var sk_idx = $(this).index()

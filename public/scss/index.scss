@@ -8,7 +8,7 @@
 html, body {
   font-family: 'Oswald', sans-serif;
   @include SM{
-    font-size: 1.25em;
+    font-size: 1.125em;
   }
 }
 
@@ -334,10 +334,17 @@ section.skill{
         @include flex($CT, $CT);
         width: 50%;
         margin: auto;
+        padding-top: 2vh;
+        // margin: auto;
         color: $colorLight;
-        padding: 5vh 0;
         font-size: 1vw;
         cursor: pointer;
+        @include LG{
+          font-size: 2vw;
+        }
+        @include SM{
+          font-size: 3vw;
+        }
         .about{ 
           padding-right: 3vw;  
           &::before{
@@ -347,7 +354,13 @@ section.skill{
         }
         .skill{
           padding: 2vh 1vw;
-          font-size: 3vw;
+          font-size: 2vw;
+          @include LG{
+            font-size: 4vw;
+          }
+          @include SM{
+            font-size: 6vw;
+          }
           border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
         }
         .portfolio{
@@ -382,6 +395,7 @@ section.skill{
             width: 50%;
             margin-top: 10%;
             height: 20%;
+            font-size: 8vw;
             // border: 1px solid #ccc;
           }
           @include SM{
@@ -410,6 +424,7 @@ section.skill{
           color: $colorWhite;
           @media screen and (max-width: 830px) {
             height: 20%;
+            font-size: 25vw;
           }
         }
         .skill-desc{
@@ -417,12 +432,6 @@ section.skill{
           width: 25%;
           height: 30%;
           vertical-align: top;
-          li {
-            color: #fff;
-            p {
-              color: $colorLight;
-            }
-          }
           @media screen and (max-width: 830px) {
             width: 100%;
           }
@@ -457,16 +466,20 @@ section.skill{
             li{
               padding: 5% 2%;
               line-height: 1.3;
+              color: #fff;
               p{
+                color: $colorLight;
                 font-size: 1vw;
               }
               @include MD{
                 padding: 1.5% 2%;
-                line-height: 1;
+                line-height: 1.5;
+                font-size: 3vw;
               }
               @media screen and (max-width: 440px) {
                 padding: 5% 2%;
                 line-height: 1.3;
+                font-size: 5vw;
               }
               // @include XS{
               //   padding: 5% 2%;
@@ -529,8 +542,9 @@ section.skill{
         transform: translateY(300%);
         transition: all .35s;
         @include SM{
-          top: 92%;
-          left: 45%;
+          top: 91%;
+          left: 46%;
+          font-size: 3vw;
         }
         &.active {
           opacity: 1;
@@ -587,11 +601,18 @@ section.portfolio{
         // position: absolute;
         @include flex($CT, $CT);
         width: 50%;
-        margin: 2vh auto;
+        margin: auto;
+        padding-top: 2vh;
         // margin: auto;
         color: $colorLight;
         font-size: 1vw;
         cursor: pointer;
+        @include LG{
+          font-size: 2vw;
+        }
+        @include SM{
+          font-size: 3vw;
+        }
         .about{ 
           padding-right: 3vw;  
           &::before{
@@ -601,7 +622,13 @@ section.portfolio{
         }
         .skill{
           padding: 2vh 1vw;
-          font-size: 3vw;
+          font-size: 2vw;
+          @include LG{
+            font-size: 4vw;
+          }
+          @include SM{
+            font-size: 6vw;
+          }
           border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
         }
         .portfolio{
@@ -617,6 +644,9 @@ section.portfolio{
         @include flex($CT, $CT);
         padding-right: 1.5vw;
         width: 100%;
+        @include LG{
+          border: 1px solid #ccc;
+        }
         .button{
           margin: 0 1.3%;
           @include flex($CT, $CT);
@@ -632,11 +662,11 @@ section.portfolio{
           letter-spacing: 0.2vw;
           cursor: pointer;
           transition: all .5s;
-          @include SM{
+          @include LG{
             padding: 2% 6% ;
           }
           @include XS{
-            padding: 2% 10% ;
+            padding: 3% 12% ;
           }
         }
         .button.active{
@@ -651,7 +681,6 @@ section.portfolio{
 
       .swiper-container{
         // margin-top: 5vh;
-        // border: 2px solid $colorDark;
             text-align: center;
             width: 100%;
             height: 65vh;
@@ -662,19 +691,15 @@ section.portfolio{
                 transition: all .5s;
                 transform: scale(.6);
                 //width: 33.333%;
-                // border: 1px solid #ccc;
+                padding-top: 3%;
                 text-align: center;
-                @include LG{
+                @include XL{
                   padding: 10% 0;
                   height: 70vh;
                   transform: scale(.9);
                 }
                 @include MD{
-                  padding-top: 10%;
                   transform: scale(1);
-                }
-                @include SM{
-                  padding-top: 10%;
                 }
                 @include XS{
                   padding-top: 30%;
@@ -715,7 +740,7 @@ section.portfolio{
                       width: 30%;
                     }
                     @include XS{
-                      width: 40%;
+                      width: 25%;
                     }
                     p{
                       padding-bottom: 15%;
@@ -723,7 +748,10 @@ section.portfolio{
                     p:nth-child(2){
                       padding-bottom: 72%;
                       @include SM{
-                        padding-bottom: 45%;
+                        padding-bottom: 40%;
+                      }
+                      @include XS{
+                        padding-bottom: 58%;
                       }
                     }
                   }
@@ -748,6 +776,9 @@ section.portfolio{
                       p:last-child{
                         padding-bottom: 10%;
                         @include SM{
+                          padding-bottom: 7%;
+                        }
+                        @include XS{
                           padding-bottom: 8%;
                         }
                       }
@@ -758,40 +789,6 @@ section.portfolio{
                         padding-bottom: 10%;
                       }
                     }
-                    // p:nth-child(2){
-                    //   padding-bottom: 4%;
-
-                    //   // &::before{
-                    //   //   display: inline-block;
-                    //   //   width: 13px;
-                    //   //   height: 13px;
-                    //   //   content: '';
-                    //   //   background-color: #C6FFDD;
-                    //   //   margin-right: 8px;
-                    //   // }
-                    // }
-                    // p:nth-child(3){
-                    //   padding-bottom: 4%;
-                    //   // &::before{
-                    //   //   display: inline-block;
-                    //   //   width: 13px;
-                    //   //   height: 13px;
-                    //   //   content: '';
-                    //   //   background-color: #FBD786;
-                    //   //   margin-right: 8px;
-                    //   // }
-                    // }
-                    // p:nth-child(4){
-                    //   padding-bottom: 15%;
-                    //   // &::before{
-                    //   //   display: inline-block;
-                    //   //   width: 13px;
-                    //   //   height: 13px;
-                    //   //   content: '';
-                    //   //   background-color: #f7797d;
-                    //   //   margin-right: 8px;
-                    //   // }
-                    // }
                   }
                 }
               &.active{
@@ -801,15 +798,19 @@ section.portfolio{
               }
           }
           .page{
-            padding-top: 3vh;
+            position: absolute;
+            bottom: 3vh;
+            width: 100%;
+            margin: auto;
             color: $colorLight;
-            font-size: 1vw;
             font-weight: 300;
             @include flex($CT, $FE);
             overflow: hidden;
             .pre{
-
               font-size: 3vw;
+              @include XS{
+                font-size: 10vw;
+              }
               padding-right: 1.5vh;
               border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
               transition: all .5s;
@@ -817,7 +818,6 @@ section.portfolio{
               transform: translateY(0);
             }
             .after{
-
               padding-left: .7vw;
               transition: all .5s;
               transform: translateY(300%);
@@ -872,14 +872,23 @@ section.contact{
     height: 100vh;
     @include bgDark(1);
     position: relative;
+    overflow: hidden;
     .navi{
       position: absolute;
       @include flex($CT, $CT);
       width: 100%;
+      margin: auto;
+      padding-top: 2vh;
+      // margin: auto;
       color: $colorLight;
-      margin: 2vh 0;
       font-size: 1vw;
       cursor: pointer;
+      @include LG{
+        font-size: 2vw;
+      }
+      @include SM{
+        font-size: 3vw;
+      }
       .about{ 
         padding-right: 3vw;  
         &::before{
@@ -889,7 +898,13 @@ section.contact{
       }
       .skill{
         padding: 2vh 1vw;
-        font-size: 3vw;
+        font-size: 2vw;
+        @include LG{
+          font-size: 4vw;
+        }
+        @include SM{
+          font-size: 6vw;
+        }
         border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
       }
       .portfolio{
@@ -911,6 +926,9 @@ section.contact{
     transform: translateY(-50%);
     .pre{
       font-size: 3vw;
+      @include XS{
+        font-size: 8vw;
+      }
       padding-right: 1.5vh;
       border-right: 1px solid rgba($color: #22ffcc, $alpha: 0.3);
     }
@@ -931,6 +949,9 @@ section.contact{
           color: $colorWhite;
           font-size: 3vw;
           font-weight: 300;
+          @include LG{
+            font-size: 5vw;
+          }
           .number{
             color: $colorDark;
             margin-bottom: 2vh;
@@ -944,6 +965,9 @@ section.contact{
             padding: .5vw 6vw;
             text-align: center;
             border: 1px solid $colorGray;
+            @include LG{
+              font-size: 4vw;
+            }
           }
         }
     
@@ -965,8 +989,11 @@ section.contact{
           position: absolute;
           top: 30vh;
           left: 16vw;
-          @include SM{
+          @include MD{
             width: 25vw;
+            top: 40vh;
+          }
+          @include SM{
             top: 35vh;
           }
           @include XS{
@@ -1005,8 +1032,11 @@ section.contact{
             position: absolute;
             top: 40vh;
             left: 20vw;
-            @include SM{
+            @include MD{
               width: 20vw;
+              top: 46vh;
+            }
+            @include SM{
               top: 45vh;
             }
             @include XS{
@@ -1038,9 +1068,9 @@ section.contact{
 
 #container {
   perspective: 30px;
-}
-
-#inner {
+        }
+        
+        #inner {
   transition: transform 0.5s;
 }
 
