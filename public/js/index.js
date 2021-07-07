@@ -15,20 +15,7 @@
 	var sectionIdx = 0;
 	var $skew = $('.skew-wrapper');
 	var $title = $('ul.skill-wrap');
-	
-	var $main = $('section.main');
-	var $skill = $('section.skill');
-	var $portfolio = $('section.portfolio');
 
-	var $menu =$main.find($('.menu'));
-	var $m_skill = $menu.find($('.skill'));
-	var $m_portfolio = $menu.find($('.portfolio'));
-	var $m_contact = $menu.find($('.contact'));
-
-	var $navi = $('.navi');
-	var $n_pre = $('.n-pre');
-	var $n_pre = $('.n-now');
-	var $n_pre = $('.n-next');
   
   setInterval(function(){
     var time =  moment( new Date().getTime()).format('hh:mm')
@@ -68,15 +55,34 @@
 	 			$section.eq(sectionIdx).css('z-index', 10);
 	 			$(this).css('transform', 'rotate(180deg)')
 	 		}
+		  if(sectionIdx === 0) {
+			  $('.page').eq(0).trigger('a')
+		  }
 		  if(sectionIdx === 1) {
 			  $title.find('li').eq(0).trigger('mouseenter')
+			  $('.page').eq(1).trigger('a')
 		  }
+		  if(sectionIdx === 2) {
+			  $('.page').eq(2).trigger('a')
+		  }
+		  if(sectionIdx === 3) {
+			  $('.page').eq(3).trigger('a')
+		  }
+
 	 		setTimeout(function() {
 	
 	 			scrollChk = true;
 	 		}, 2000);
 	 	}
 	 });
+
+	 $('.page').on('a', function() {
+		 $('.page').removeClass('active')
+		 setTimeout(function () {
+			 $('.page').addClass('active')
+		 },800)
+		console.log($('.page'));
+	 })
   
   function onChange() {
   	let old = sectionIdx;
@@ -94,18 +100,27 @@
 	  else
 		  $section.eq(old).css('transform', 'rotate(180deg)')
 	  
+	  if(sectionIdx === 0) {
+			$('.page').eq(0).trigger('a')
+	  }
 	  if(sectionIdx === 1) {
 	  	$title.find('li').eq(0).trigger('mouseenter')
+			$('.page').eq(1).trigger('a')
 	  }
 	  
 	  if(sectionIdx === 2) {
 	    var name = $(this).data('pf')
 		  $('.'+name+'-btn').trigger('click')
+			$('.page').eq(2).trigger('a')
+	  }
+	  if(sectionIdx === 3) {
+			$('.page').eq(3).trigger('a')
 	  }
   }
   
   $('.menu > li').click(onChange);
   $('.bt-navi').click(onChange);
+  $('.bt-next').click(onChange);
 
 
 
