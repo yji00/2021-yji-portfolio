@@ -13,7 +13,7 @@ html, body {
 }
 
 
-// .section {overflow: hidden; width: 100%; height: 100vh; top: 0; left: 0; position: fixed;}
+.section {overflow: hidden; width: 100%; height: 100vh; top: 0; left: 0; position: fixed;}
 
 .gnb-wrapper {
   width: 100%;
@@ -588,10 +588,11 @@ section.portfolio{
     position: relative;
     width: 100%;
     height: 100vh;
+    background-color: black;
     video{
       object-fit: cover;
       width: 100%; height: 100%;
-      opacity: .5;
+      // opacity: .5;
       position: absolute;
       }
     .black-wrapper{
@@ -648,7 +649,7 @@ section.portfolio{
         padding-right: 1.5vw;
         width: 100%;
         @include LG{
-          border: 1px solid #ccc;
+          // border: 1px solid #ccc;
         }
         .button{
           margin: 0 1.3%;

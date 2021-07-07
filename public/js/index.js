@@ -23,43 +23,43 @@
 
   
 	
-	// //개별적으로 Wheel 이벤트 적용
-	// $section.on("mousewheel DOMMouseScroll", function (e) {
-	// 	e.preventDefault();
-	// 	if(scrollChk) {
-	// 		scrollChk = false;
-	// 		var delta = 0;
-	// 		if (!event) event = window.event;
-	// 		if (event.wheelDelta) {
-	// 			delta = event.wheelDelta;
-	// 			if (window.opera) delta = -delta;
-	// 		}
-	// 		else if (event.detail)
-	// 			delta = -event.detail;
-	// 		console.log(delta)
+	//개별적으로 Wheel 이벤트 적용
+	$section.on("mousewheel DOMMouseScroll", function (e) {
+		e.preventDefault();
+		if(scrollChk) {
+			scrollChk = false;
+			var delta = 0;
+			if (!event) event = window.event;
+			if (event.wheelDelta) {
+				delta = event.wheelDelta;
+				if (window.opera) delta = -delta;
+			}
+			else if (event.detail)
+				delta = -event.detail;
+			console.log(delta)
 	
-	// 		$section.each(function() {
-	// 			$(this).css('z-index', 9);
-	// 			$(this).css('transform', 'rotate(0)');
-	// 		})
-	// 		$section.eq(sectionIdx).css('z-index', 11);
+			$section.each(function() {
+				$(this).css('z-index', 9);
+				$(this).css('transform', 'rotate(0)');
+			})
+			$section.eq(sectionIdx).css('z-index', 11);
 	
-	// 		if (delta < 0) { // 마우스휠을 위에서 아래로
-	// 			sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
-	// 			$section.eq(sectionIdx).css('z-index', 10);
-	// 			$(this).css('transform', 'rotate(-180deg)')
-	// 		}
-	// 		else { // 마우스휠을 아래에서 위로
-	// 			sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
-	// 			$section.eq(sectionIdx).css('z-index', 10);
-	// 			$(this).css('transform', 'rotate(180deg)')
-	// 		}
-	// 		setTimeout(function() {
+			if (delta < 0) { // 마우스휠을 위에서 아래로
+				sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
+				$section.eq(sectionIdx).css('z-index', 10);
+				$(this).css('transform', 'rotate(-180deg)')
+			}
+			else { // 마우스휠을 아래에서 위로
+				sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
+				$section.eq(sectionIdx).css('z-index', 10);
+				$(this).css('transform', 'rotate(180deg)')
+			}
+			setTimeout(function() {
 	
-	// 			scrollChk = true;
-	// 		}, 2000);
-	// 	}
-	// });
+				scrollChk = true;
+			}, 2000);
+		}
+	});
 
 
 
