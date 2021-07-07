@@ -15,13 +15,27 @@
 	var sectionIdx = 0;
 	var $skew = $('.skew-wrapper');
 	var $title = $('ul.skill-wrap');
+	
+	var $main = $('section.main');
+	var $skill = $('section.skill');
+	var $portfolio = $('section.portfolio');
+
+	var $menu =$main.find($('.menu'));
+	var $m_skill = $menu.find($('.skill'));
+	var $m_portfolio = $menu.find($('.portfolio'));
+	var $m_contact = $menu.find($('.contact'));
+
+	var $navi = $('.navi');
+	var $n_pre = $('.n-pre');
+	var $n_pre = $('.n-now');
+	var $n_pre = $('.n-next');
   
   setInterval(function(){
     var time =  moment( new Date().getTime()).format('hh:mm')
     $('.time').text(time)
   },1000)
 
-  
+
 	
 	//개별적으로 Wheel 이벤트 적용
 	$section.on("mousewheel DOMMouseScroll", function (e) {

@@ -345,14 +345,14 @@ section.skill{
         @include SM{
           font-size: 3vw;
         }
-        .about{ 
+        .n-pre{ 
           padding-right: 3vw;  
           &::before{
             padding-right: 1vw;
             content: '<';
           }
         }
-        .skill{
+        .n-now{
           padding: 2vh 1vw;
           font-size: 2vw;
           @include LG{
@@ -363,7 +363,7 @@ section.skill{
           }
           border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
         }
-        .portfolio{
+        .n-next{
           padding-left: 3vw;
           &::after{
             padding-left: 1vw;
@@ -600,7 +600,7 @@ section.portfolio{
       z-index: 10;
       width: 100%;
       height: 100vh;
-      @include bgDark(.8);
+      @include bgDark(.6);
       .navi{
         // position: absolute;
         @include flex($CT, $CT);
@@ -617,14 +617,14 @@ section.portfolio{
         @include SM{
           font-size: 3vw;
         }
-        .about{ 
+        .n-pre{ 
           padding-right: 3vw;  
           &::before{
             padding-right: 1vw;
             content: '<';
           }
         }
-        .skill{
+        .n-now{
           padding: 2vh 1vw;
           font-size: 2vw;
           @include LG{
@@ -635,7 +635,7 @@ section.portfolio{
           }
           border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
         }
-        .portfolio{
+        .n-next{
           padding-left: 3vw;
           &::after{
             padding-left: 1vw;
@@ -893,14 +893,14 @@ section.contact{
       @include SM{
         font-size: 3vw;
       }
-      .about{ 
+      .n-pre{ 
         padding-right: 3vw;  
         &::before{
           padding-right: 1vw;
           content: '<';
         }
       }
-      .skill{
+      .n-now{
         padding: 2vh 1vw;
         font-size: 2vw;
         @include LG{
@@ -911,7 +911,7 @@ section.contact{
         }
         border-bottom:1px solid rgba($color: #fff, $alpha: .3) ;
       }
-      .portfolio{
+      .n-next{
         padding-left: 3vw;
         &::after{
           padding-left: 1vw;
