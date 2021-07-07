@@ -35,45 +35,77 @@
     $('.time').text(time)
   },1000)
 
-
+  
 	
-	//개별적으로 Wheel 이벤트 적용
-	$section.on("mousewheel DOMMouseScroll", function (e) {
-		e.preventDefault();
-		if(scrollChk) {
-			scrollChk = false;
-			var delta = 0;
-			if (!event) event = window.event;
-			if (event.wheelDelta) {
-				delta = event.wheelDelta;
-				if (window.opera) delta = -delta;
-			}
-			else if (event.detail)
-				delta = -event.detail;
-			console.log(delta)
+	 //개별적으로 Wheel 이벤트 적용
+	 $section.on("mousewheel DOMMouseScroll", function (e) {
+	 	e.preventDefault();
+	 	if(scrollChk) {
+	 		scrollChk = false;
+	 		var delta = 0;
+	 		if (!event) event = window.event;
+	 		if (event.wheelDelta) {
+	 			delta = event.wheelDelta;
+	 			if (window.opera) delta = -delta;
+	 		}
+	 		else if (event.detail)
+	 			delta = -event.detail;
+	 		console.log(delta)
 	
-			$section.each(function() {
-				$(this).css('z-index', 9);
-				$(this).css('transform', 'rotate(0)');
-			})
-			$section.eq(sectionIdx).css('z-index', 11);
+	 		$section.each(function() {
+	 			$(this).css('z-index', 9);
+	 			$(this).css('transform', 'rotate(0)');
+	 		})
+	 		$section.eq(sectionIdx).css('z-index', 11);
 	
-			if (delta < 0) { // 마우스휠을 위에서 아래로
-				sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
-				$section.eq(sectionIdx).css('z-index', 10);
-				$(this).css('transform', 'rotate(-180deg)')
-			}
-			else { // 마우스휠을 아래에서 위로
-				sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
-				$section.eq(sectionIdx).css('z-index', 10);
-				$(this).css('transform', 'rotate(180deg)')
-			}
-			setTimeout(function() {
+	 		if (delta < 0) { // 마우스휠을 위에서 아래로
+	 			sectionIdx = sectionIdx === sectionLast ? 0 : sectionIdx + 1;
+	 			$section.eq(sectionIdx).css('z-index', 10);
+	 			$(this).css('transform', 'rotate(-180deg)')
+	 		}
+	 		else { // 마우스휠을 아래에서 위로
+	 			sectionIdx = sectionIdx === 0 ? sectionLast : sectionIdx - 1;
+	 			$section.eq(sectionIdx).css('z-index', 10);
+	 			$(this).css('transform', 'rotate(180deg)')
+	 		}
+		  if(sectionIdx === 1) {
+			  $title.find('li').eq(0).trigger('mouseenter')
+		  }
+	 		setTimeout(function() {
 	
-				scrollChk = true;
-			}, 2000);
-		}
-	});
+	 			scrollChk = true;
+	 		}, 2000);
+	 	}
+	 });
+  
+  function onChange() {
+  	let old = sectionIdx;
+	  $section.each(function() {
+		  $(this).css('z-index', 9);
+		  $(this).css('transform', 'rotate(0deg)');
+		  console.log($(this).css('transform'))
+	  })
+	  $section.eq(old).css('z-index', 11);
+	  sectionIdx = $(this).data('idx');
+	  //console.log('old', old, 'now', sectionIdx)
+	  $section.eq(sectionIdx).css({'z-index': 10});
+	  if(old < sectionIdx)
+	    $section.eq(old).css('transform', 'rotate(-180deg)')
+	  else
+		  $section.eq(old).css('transform', 'rotate(180deg)')
+	  
+	  if(sectionIdx === 1) {
+	  	$title.find('li').eq(0).trigger('mouseenter')
+	  }
+	  
+	  if(sectionIdx === 2) {
+	    var name = $(this).data('pf')
+		  $('.'+name+'-btn').trigger('click')
+	  }
+  }
+  
+  $('.menu > li').click(onChange);
+  $('.bt-navi').click(onChange);
 
 
 
@@ -137,7 +169,7 @@
 		});
 	}
 	
-	$title.find('li').mouseover(onSkillOver);
+	$title.find('li').mouseenter(onSkillOver);
 
 
 
