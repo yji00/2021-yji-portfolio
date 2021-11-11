@@ -1,7 +1,7 @@
 (function () {
 
 	if (window.navigator.userAgent.match(/MSIE|Internet Explorer|Trident/i)) {
-    // IE!!
+		// IE!!
 		window.location = "microsoft-edge:" + window.location.href;
 		$('.gnb-wrapper').hide();
 		$('.ex-wrapper').show();
@@ -16,13 +16,13 @@
 	var $skew = $('.skew-wrapper');
 	var $title = $('ul.skill-wrap');
 
-  
-  setInterval(function(){
-    var time =  moment( new Date().getTime()).format('hh:mm')
-    $('.time').text(time)
-  },1000)
+	
+	setInterval(function(){
+		var time =  moment( new Date().getTime()).format('hh:mm')
+		$('.time').text(time)
+	},1000)
 
-  
+	
 	
 	 //개별적으로 Wheel 이벤트 적용
 	 $section.on("mousewheel DOMMouseScroll", function (e) {
@@ -55,19 +55,19 @@
 	 			$section.eq(sectionIdx).css('z-index', 10);
 	 			$(this).css('transform', 'rotate(180deg)')
 	 		}
-		  if(sectionIdx === 0) {
-			  $('.page').eq(0).trigger('a')
-		  }
-		  if(sectionIdx === 1) {
-			  $title.find('li').eq(0).trigger('mouseenter')
-			  $('.page').eq(1).trigger('a')
-		  }
-		  if(sectionIdx === 2) {
-			  $('.page').eq(2).trigger('a')
-		  }
-		  if(sectionIdx === 3) {
-			  $('.page').eq(3).trigger('a')
-		  }
+			if(sectionIdx === 0) {
+				$('.page').eq(0).trigger('a')
+			}
+			if(sectionIdx === 1) {
+				$title.find('li').eq(0).trigger('mouseenter')
+				$('.page').eq(1).trigger('a')
+			}
+			if(sectionIdx === 2) {
+				$('.page').eq(2).trigger('a')
+			}
+			if(sectionIdx === 3) {
+				$('.page').eq(3).trigger('a')
+			}
 
 	 		setTimeout(function() {
 	
@@ -83,44 +83,44 @@
 		 },800)
 		console.log($('.page'));
 	 })
-  
-  function onChange() {
-  	let old = sectionIdx;
-	  $section.each(function() {
-		  $(this).css('z-index', 9);
-		  $(this).css('transform', 'rotate(0deg)');
-		  console.log($(this).css('transform'))
-	  })
-	  $section.eq(old).css('z-index', 11);
-	  sectionIdx = $(this).data('idx');
-	  //console.log('old', old, 'now', sectionIdx)
-	  $section.eq(sectionIdx).css({'z-index': 10});
-	  if(old < sectionIdx)
-	    $section.eq(old).css('transform', 'rotate(-180deg)')
-	  else
-		  $section.eq(old).css('transform', 'rotate(180deg)')
-	  
-	  if(sectionIdx === 0) {
+	
+	function onChange() {
+		let old = sectionIdx;
+		$section.each(function() {
+			$(this).css('z-index', 9);
+			$(this).css('transform', 'rotate(0deg)');
+			console.log($(this).css('transform'))
+		})
+		$section.eq(old).css('z-index', 11);
+		sectionIdx = $(this).data('idx');
+		//console.log('old', old, 'now', sectionIdx)
+		$section.eq(sectionIdx).css({'z-index': 10});
+		if(old < sectionIdx)
+			$section.eq(old).css('transform', 'rotate(-180deg)')
+		else
+			$section.eq(old).css('transform', 'rotate(180deg)')
+		
+		if(sectionIdx === 0) {
 			$('.page').eq(0).trigger('a')
-	  }
-	  if(sectionIdx === 1) {
-	  	$title.find('li').eq(0).trigger('mouseenter')
+		}
+		if(sectionIdx === 1) {
+			$title.find('li').eq(0).trigger('mouseenter')
 			$('.page').eq(1).trigger('a')
-	  }
-	  
-	  if(sectionIdx === 2) {
-	    var name = $(this).data('pf')
-		  $('.'+name+'-btn').trigger('click')
+		}
+		
+		if(sectionIdx === 2) {
+			var name = $(this).data('pf')
+			$('.'+name+'-btn').trigger('click')
 			$('.page').eq(2).trigger('a')
-	  }
-	  if(sectionIdx === 3) {
+		}
+		if(sectionIdx === 3) {
 			$('.page').eq(3).trigger('a')
-	  }
-  }
-  
-  $('.menu > li').click(onChange);
-  $('.bt-navi').click(onChange);
-  $('.bt-next').click(onChange);
+		}
+	}
+	
+	$('.menu > li').click(onChange);
+	$('.bt-navi').click(onChange);
+	$('.bt-next').click(onChange);
 
 
 
@@ -142,7 +142,7 @@
 		console.log(this)
 		var skillIndex = $(this).index()
 		var $numwrap = $('.gradient-wrapper').find('.number')
-		var numarr = [95, 80, 90]
+		var numarr = [90, 90, 80]
 		var descarr = [
 			'My available web Publishing skills',
 			'My available web FrontEnd skills',
@@ -189,42 +189,42 @@
 
 
 
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-	  spaceBetween: 30,
-	  breakpoints : {
-		  767: { slidesPerView: 2 },
-		  991: { slidesPerView: 3 },
-	  },
-    //centeredSlides: true,
-    loop: true,
-    keyboard: {
-      enabled: true,
-    },
+	var swiper = new Swiper(".mySwiper", {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		breakpoints : {
+			767: { slidesPerView: 2 },
+			991: { slidesPerView: 3 },
+		},
+		//centeredSlides: true,
+		loop: true,
+		keyboard: {
+			enabled: true,
+		},
 		autoplay: {
 			delay: 3000,
 			disableOnInteraction: false,
 		},
-  });
+	});
 
-  document
-    .querySelector(".p-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(3, 0);
-    });
-  document
-    .querySelector(".f-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(6, 0);
-    });
-  document
-    .querySelector(".b-btn")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      swiper.slideTo(9, 0);
-    });
+	document
+		.querySelector(".p-btn")
+		.addEventListener("click", function (e) {
+			e.preventDefault();
+			swiper.slideTo(2, 0);
+		});
+	document
+		.querySelector(".f-btn")
+		.addEventListener("click", function (e) {
+			e.preventDefault();
+			swiper.slideTo(6, 0);
+		});
+	document
+		.querySelector(".b-btn")
+		.addEventListener("click", function (e) {
+			e.preventDefault();
+			swiper.slideTo(10, 0);
+		});
 
 
 		swiper.on('slideChange', function() {
