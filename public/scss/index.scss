@@ -776,7 +776,7 @@ section.portfolio{
                     opacity: .5;
                     text-align: left;
                     width: 50%;
-                    font-size: .7em;
+                    font-size: .9em;
                     .sub-color{
                       padding-bottom: 4%;
                       .color{
@@ -791,12 +791,15 @@ section.portfolio{
                         padding-bottom: 4%;
                       }
                       p:last-child{
-                        padding-bottom: 10%;
-                        @include SM{
-                          padding-bottom: 7%;
+                        padding-bottom: 8%;
+                        @include XL{
+                          padding-bottom: 6%;
                         }
-                        @include XS{
-                          padding-bottom: 8%;
+                        @include LG{
+                          padding-bottom: 4%;
+                        }
+                        @include SM{
+                          padding-bottom: 1%;
                         }
                       }
                     }
